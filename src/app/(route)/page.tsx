@@ -65,8 +65,6 @@ export default function Home() {
 
   const title = "JG's Next.js Boilerplate";
 
-  console.log(isInViewStartArticle);
-
   return (
     <ScrollContainer>
       <main>
