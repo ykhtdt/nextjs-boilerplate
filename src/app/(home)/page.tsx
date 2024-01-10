@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 /**
 * @todo: 세션스토리지로 해당 페이지를 이미 본 경우 애니메이션 비활성화
 */
-export default function Home() {
+export default function HomePage() {
   const { isStarted } = useAtomValue(loadingAtom);
 
   const [isCompleted, setIsCompleted] = useState(false);
