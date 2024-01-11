@@ -9,15 +9,15 @@ export default function ExamplesPage() {
           Introduction
         </h1>
         <p className="text-slate-300">
-          To create a boilerplate for front-end development,
-          The purpose is to learn other necessary knowledge and improve proficiency through examples.
+          To establish a front-end development boilerplate,
+          the goal is to acquire additional essential knowledge and enhance proficiency through practical examples.
         </p>
       </div>
       <div className="pt-8">
         <h2 className="pb-2 mt-12 text-2xl font-semibold tracking-tight border-b">
           Base Features
         </h2>
-        <ul className="my-6 ml-6 list-disc">
+        <ul className="my-6 ml-6 list-disc text-slate-300">
           <li className="mt-2">
             React
           </li>
