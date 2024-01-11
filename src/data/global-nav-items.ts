@@ -1,15 +1,10 @@
-export type Item = {
-  name: string;
-  key: string;
-  href: string;
-  children?: {
-    name: string;
-    key: string;
-    slug: string;
-  }[];
+import type { GlobalNavAccordionTrigger, GlobalNavAccordionContent  } from '@/components/ui/global-nav'
+
+type SubItem = GlobalNavAccordionTrigger & {
+  children?: GlobalNavAccordionContent[];
 };
 
-export const items: { name: string; key: string; subItem: Item[] }[] = [
+export const items: { name: string; key: string; subItem: SubItem[] }[] = [
   {
     name: 'Getting Started',
     key: 'start',
