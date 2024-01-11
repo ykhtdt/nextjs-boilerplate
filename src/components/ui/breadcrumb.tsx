@@ -13,8 +13,8 @@ export default function Breadcrumb() {
   return (
     <div className="-mt-4 mb-7 md:mt-2 md:mb-10">
       <div className="flex flex-wrap items-center gap-2 text-sm">
-        {pathname.split('/').slice(1).map((segment, i) => {
-          const isLast = pathname.split('/').slice(1).length - 1 === i;
+        {pathname.split('/').slice(1, 5).map((segment, i) => {
+          const isLast = pathname.split('/').slice(1, 5).length - 1 === i;
 
           return (
             <Fragment key={segment}>
@@ -26,7 +26,7 @@ export default function Breadcrumb() {
                     ['font-medium']: isLast,
                   })}
                 >
-                  {segment}
+                  {segment.replace("-", " ")}
                 </span>
               </span>
 
