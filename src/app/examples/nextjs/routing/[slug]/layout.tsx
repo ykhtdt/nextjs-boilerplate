@@ -36,7 +36,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ["bg-slate-700"]: params.category,
             ["bg-[#596FB7]"]: !params.category,
           })}
-
         >
           Home
         </Link>

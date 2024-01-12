@@ -12,7 +12,7 @@ export const categories: Category[] = [
     key: "clothing",
     name: "clothing",
   },
-]
+];
 
 export const movieCategories: Category[] = [
   {

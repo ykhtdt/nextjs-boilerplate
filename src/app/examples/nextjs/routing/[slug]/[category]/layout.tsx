@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { movieCategories, clothinglCategory } from "@/data/categories";
 
@@ -10,7 +10,7 @@ import clsx from "clsx";
 export default function Layout({ children }: { children: React.ReactNode }) {
   const params = useParams();
 
-  const categories = params.category === 'movie' ? movieCategories : clothinglCategory;
+  const categories = params.category === "movie" ? movieCategories : clothinglCategory;
 
   return (
     <div className="p-4 space-y-4 border border-slate-600">
@@ -21,7 +21,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ["bg-slate-700"]: params.category,
             ["bg-[#596FB7]"]: !params.category,
           })}
-
         >
           Home
         </Link>
@@ -40,5 +39,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <div className="px-2">{children}</div>
     </div>
-  )
+  );
 }
