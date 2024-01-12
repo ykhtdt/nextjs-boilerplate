@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { motion, useInView } from "framer-motion";
-import { MoveRight } from 'lucide-react'
+import { MoveRight } from "lucide-react";
 
 import { useAtomValue } from "jotai";
 import { loadingAtom } from "@/state/atom/loading";
@@ -17,10 +17,9 @@ import ScrollDown from "@/components/arrows/scroll-down";
 
 import { Button } from "@/components/ui/button";
 
-
 /**
-* @todo: 세션스토리지로 해당 페이지를 이미 본 경우 애니메이션 비활성화
-*/
+ * @todo: 세션스토리지로 해당 페이지를 이미 본 경우 애니메이션 비활성화
+ */
 export default function HomePage() {
   const { isStarted } = useAtomValue(loadingAtom);
 
@@ -157,7 +156,10 @@ export default function HomePage() {
                 >
                   <motion.div className="flex flex-col items-center w-full" variants={defaultAnimations} transition={{ duration: 2 }}>
                     <h2 className="mb-12 font-bold tracking-wide sm:text-4xl">View with examples</h2>
-                    <Button variant="outline" className="h-auto p-0 text-base font-medium uppercase transition-colors border border-blue-600 rounded-lg hover:bg-inherit hover:border-blue-600/80">
+                    <Button
+                      variant="outline"
+                      className="h-auto p-0 text-base font-medium uppercase transition-colors border border-blue-600 rounded-lg hover:bg-inherit hover:border-blue-600/80"
+                    >
                       <Link href="/examples" className="flex h-12 px-12 py-3 [&>svg]:hover:animate-wobble ">
                         <span className="mr-3">Learn more</span>
                         <MoveRight />

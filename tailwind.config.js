@@ -64,7 +64,7 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "wobble": "animate-wobble 2s ease-out infinite",
+        wobble: "animate-wobble 2s ease-out infinite",
       },
       keyframes: {
         "accordion-down": {
