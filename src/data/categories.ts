@@ -1,7 +1,18 @@
-type Category = {
+export type Category = {
   key: string;
   name: string;
 };
+
+export const categories: Category[] = [
+  {
+    key: "movie",
+    name: "movie",
+  },
+  {
+    key: "clothing",
+    name: "clothing",
+  },
+]
 
 export const movieCategories: Category[] = [
   {
@@ -19,5 +30,24 @@ export const movieCategories: Category[] = [
   {
     key: "comedy",
     name: "comedy",
+  },
+];
+
+export const clothinglCategory: Category[] = [
+  {
+    key: "top",
+    name: "top",
+  },
+  {
+    key: "outer",
+    name: "outer",
+  },
+  {
+    key: "pants",
+    name: "pants",
+  },
+  {
+    key: "shoes",
+    name: "shoes",
   },
 ];
