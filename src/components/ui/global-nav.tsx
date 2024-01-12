@@ -31,9 +31,9 @@ export default function GlobalNav() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed top-8 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block">
-      <div className="relative h-full overflow-hidden">
-        <div className="h-full w-full rounded-[inherit]">
+    <aside className="fixed z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full md:sticky md:block">
+      <div className="relative h-full py-8 overflow-hidden">
+        <div className="h-full w-full rounded-[inherit] mt-2">
           <div className="table min-w-full">
             <div className="w-full">
               {items.map((item) => (
