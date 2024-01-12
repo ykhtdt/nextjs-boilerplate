@@ -5,11 +5,11 @@ import { CustomProvider } from "@/state/store";
 
 import "@/app/globals.css";
 
-import { Space_Grotesk } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
-const spaceGrotesk = Space_Grotesk({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-spaceGrotesk",
+  variable: "--font-montserrat",
 });
 
 export const metadata = {
@@ -20,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body className={spaceGrotesk.variable} id="body">
+      <body className={montserrat.variable} id="body">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <CustomProvider>{children}</CustomProvider>
         </ThemeProvider>
