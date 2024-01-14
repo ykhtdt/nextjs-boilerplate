@@ -39,7 +39,7 @@ export interface TabProps {
 export function Tab({ path, item }: TabProps) {
   const segment = useSelectedLayoutSegment();
 
-  const href = item.key === 'home' ? path : path + `/${item.key}`;
+  const href = !item.slug ? path : path + `/${item.key}`;
 
   const isActive = segment === null && !item.slug || segment === item.slug;
 
@@ -48,7 +48,7 @@ export function Tab({ path, item }: TabProps) {
       href={href}
       className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
         ["bg-zinc-700 hover:bg-zinc-500"]: !isActive,
-        ["bg-[#5B9A8B]"]: isActive,
+        ["bg-teal-700"]: isActive,
       })}
     >
       {item.name}
