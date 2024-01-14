@@ -53,9 +53,9 @@ export default function GlobalNav() {
                         <Link
                           href={sub.href}
                           className={clsx(
-                            "flex items-center w-full px-2 py-1 border border-transparent rounded-md group hover:text-[#5B9A8B] hover:font-medium",
+                            "flex items-center w-full px-2 py-1 border border-transparent rounded-md group hover:text-teal-700 hover:font-medium",
                             {
-                              ["text-[#F6ECA9] font-medium"]: isActive,
+                              ["text-yellow-200 font-medium"]: isActive,
                               ["text-muted-foreground"]: !isActive,
                             }
                           )}
@@ -99,9 +99,9 @@ export function GlobalNavAccordion({ trigger, item }: GlobalNavAccordionProps) {
           <Link
             href={trigger.href}
             className={clsx(
-              "absolute flex items-center w-[calc(100%-1rem)] px-2 py-1 border border-transparent rounded-md no-underline hover:text-[#5B9A8B] hover:font-medium",
+              "absolute flex items-center w-[calc(100%-1rem)] px-2 py-1 border border-transparent rounded-md no-underline hover:text-teal-700 hover:font-medium",
               {
-                ["text-[#F6ECA9] font-medium"]: trigger.href === pathname,
+                ["text-yellow-200 font-medium"]: trigger.href === pathname,
                 ["text-muted-foreground"]: trigger.href !== pathname,
               }
             )}
@@ -117,7 +117,7 @@ export function GlobalNavAccordion({ trigger, item }: GlobalNavAccordionProps) {
               <Link
                 href={`${trigger.href}/${child.slug}`}
                 className={clsx("relative", {
-                  ["text-[#F6ECA9] font-medium border-[#F6ECA9]"]: pathname.includes(`${trigger.href}/${child.slug}`),
+                  ["text-yellow-200 font-medium border-yellow-200"]: pathname.includes(`${trigger.href}/${child.slug}`),
                 })}
               >
                 {child.name}
