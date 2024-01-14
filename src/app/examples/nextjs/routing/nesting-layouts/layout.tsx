@@ -2,24 +2,17 @@
 
 import { categories } from "@/data/categories";
 
-import { useCallback, useState } from "react";
 import Link from "next/link";
 import { useParams, useSelectedLayoutSegments } from "next/navigation";
 
 import clsx from "clsx";
 import { Lock } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { ClickCounter } from "@/components/ui/click-counter";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const params = useParams();
   const segments = useSelectedLayoutSegments();
-
-  const [clicks, setClicks] = useState(0);
-
-  const handleClick = useCallback(() => {
-    setClicks((prev) => prev + 1);
-  }, []);
 
   return (
     <div className="p-4 space-y-4 border border-zinc-600">
@@ -62,9 +55,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Link>
           ))}
         </div>
-        <Button variant="secondary" size="sm" onClick={handleClick} className="hover:bg-zinc-500 transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light">
-          {clicks} Clicks
-        </Button>
+        <ClickCounter />
       </div>
       <div className="px-2">
         {children}
