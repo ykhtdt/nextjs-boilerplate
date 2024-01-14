@@ -39,7 +39,7 @@ export interface TabProps {
 export function Tab({ path, item }: TabProps) {
   const segment = useSelectedLayoutSegment();
 
-  const href = item.key === 'home' ? path : path + `/${item.key}`;
+  const href = !item.slug ? path : path + `/${item.key}`;
 
   const isActive = segment === null && !item.slug || segment === item.slug;
 
