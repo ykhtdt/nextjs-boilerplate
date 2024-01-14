@@ -1,3 +1,9 @@
+"use client";
+
+import { useParams } from "next/navigation";
+
 export default function Page() {
-  return <div>...</div>;
+  const params = useParams();
+
+  return <div>{params.subCategory}</div>;
 }
