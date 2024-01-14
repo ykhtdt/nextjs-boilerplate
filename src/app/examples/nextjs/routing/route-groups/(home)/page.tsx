@@ -1,7 +1,4 @@
-"use client";
-
 import { routingData } from "@/data/routing";
-import { useSelectedLayoutSegment } from "next/navigation";
 
 export default function Page() {
   const data = routingData.find((data) => data.key === "route groups");

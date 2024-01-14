@@ -37,7 +37,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             href="/examples/nextjs/routing/nesting-layouts"
             className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
               ["bg-zinc-700 hover:bg-zinc-500"]: params.category,
-              ["bg-[#5B9A8B]"]: !params.category,
+              ["bg-teal-700"]: !params.category,
             })}
           >
             Home
@@ -47,7 +47,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               href={`/examples/nextjs/routing/nesting-layouts/${category.key}`}
               className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
                 ["bg-zinc-700 hover:bg-zinc-500"]: params.category !== category.key,
-                ["bg-[#5B9A8B]"]: params.category === category.key,
+                ["bg-teal-700"]: params.category === category.key,
               })}
               key={category.key}
             >

@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             href={`/examples/nextjs/routing/nesting-layouts/${params.category}`}
             className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
               ["bg-zinc-700 hover:bg-zinc-500"]: params.subCategory,
-              ["bg-[#5B9A8B]"]: !params.subCategory,
+              ["bg-teal-700"]: !params.subCategory,
             })}
           >
             Home
@@ -32,7 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               href={`/examples/nextjs/routing/nesting-layouts/${params.category}/${category.key}`}
               className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
                 ["bg-zinc-700 hover:bg-zinc-500"]: params.subCategory !== category.key,
-                ["bg-[#5B9A8B]"]: params.subCategory === category.key,
+                ["bg-teal-700"]: params.subCategory === category.key,
               })}
               key={category.key}
             >

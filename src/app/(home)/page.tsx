@@ -12,7 +12,7 @@ import { MoveRight } from "lucide-react";
 import { useAtomValue } from "jotai";
 import { loadingAtom } from "@/state/atom/loading";
 
-import ScrollContainer from "@/components/containers/scroll-container";
+import ScrollContainer from "@/components/layout/scroll-container";
 import ScrollDown from "@/components/arrows/scroll-down";
 
 import { Button } from "@/components/ui/button";
