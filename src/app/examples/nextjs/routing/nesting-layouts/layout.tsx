@@ -41,7 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="flex items-center justify-between px-2">
         <div className="flex gap-4">
           <Link
-            href={`/examples/nextjs/routing/${params.slug}`}
+            href="/examples/nextjs/routing/nesting-layouts"
             className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
               ["bg-zinc-700 hover:bg-zinc-500"]: params.category,
               ["bg-[#5B9A8B]"]: !params.category,
@@ -51,7 +51,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
           {categories.map((category) => (
             <Link
-              href={`/examples/nextjs/routing/${params.slug}/${category.key}`}
+              href={`/examples/nextjs/routing/nesting-layouts/${category.key}`}
               className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
                 ["bg-zinc-700 hover:bg-zinc-500"]: params.category !== category.key,
                 ["bg-[#5B9A8B]"]: params.category === category.key,

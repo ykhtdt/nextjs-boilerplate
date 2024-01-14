@@ -9,6 +9,7 @@ import { useParams } from "next/navigation";
 import clsx from "clsx";
 
 import { Button } from "@/components/ui/button";
+import { TabGroup } from "@/components/ui/tab-group";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const params = useParams();
@@ -24,29 +25,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="p-4 space-y-4 border border-zinc-600">
       <div className="flex items-center justify-between px-2">
-        <div className="flex gap-4">
-          <Link
-            href={`/examples/nextjs/routing/${params.slug}/${params.category}`}
-            className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
-              ["bg-zinc-700 hover:bg-zinc-500"]: params.subCategory,
-              ["bg-[#5B9A8B]"]: !params.subCategory,
-            })}
-          >
-            Home
-          </Link>
-          {categories.map((category) => (
-            <Link
-              href={`/examples/nextjs/routing/${params.slug}/${params.category}/${category.key}`}
-              className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
-                ["bg-zinc-700 hover:bg-zinc-500"]: params.subCategory !== category.key,
-                ["bg-[#5B9A8B]"]: params.subCategory === category.key,
-              })}
-              key={category.key}
-            >
-              {category.name}
-            </Link>
-          ))}
-        </div>
+        <TabGroup
+          path={`/examples/nextjs/routing/route-groups/${params.category}`}
+          items={[
+            {
+              key: 'home',
+              name: 'Home',
+            },
+            ...categories.map((c) => ({
+              key: c.key,
+              name: c.name,
+              slug: c.key,
+            })),
+          ]}
+        />
         <Button variant="secondary" size="sm" onClick={handleClick} className="hover:bg-zinc-500 transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light">
           {clicks} Clicks
         </Button>

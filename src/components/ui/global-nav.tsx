@@ -38,7 +38,7 @@ export default function GlobalNav() {
             <div className="w-full">
               {items.map((item) => (
                 <div className="pb-4" key={item.key}>
-                  <h4 className="px-2 mb-2 text-sm font-semibold rounded-md">{item.name}</h4>
+                  <div className="px-2 mb-2 text-sm font-semibold rounded-md">{item.name}</div>
                   <div className="grid grid-flow-row text-sm auto-rows-max">
                     {item.subItem.map((sub) => {
                       const isActive = sub.href === pathname;
@@ -53,7 +53,7 @@ export default function GlobalNav() {
                         <Link
                           href={sub.href}
                           className={clsx(
-                            "flex items-center w-full px-2 py-1 border border-transparent rounded-md group hover:text-[#5B9A8B]",
+                            "flex items-center w-full px-2 py-1 border border-transparent rounded-md group hover:text-[#5B9A8B] hover:font-medium",
                             {
                               ["text-[#F6ECA9] font-medium"]: isActive,
                               ["text-muted-foreground"]: !isActive,
@@ -76,7 +76,7 @@ export default function GlobalNav() {
   );
 }
 
-const GlobalNavAccordion = ({ trigger, item }: GlobalNavAccordionProps) => {
+export function GlobalNavAccordion({ trigger, item }: GlobalNavAccordionProps) {
   const pathname = usePathname();
   const [value, setValue] = useState<string[]>([]);
 
@@ -99,7 +99,7 @@ const GlobalNavAccordion = ({ trigger, item }: GlobalNavAccordionProps) => {
           <Link
             href={trigger.href}
             className={clsx(
-              "absolute flex items-center w-[calc(100%-1rem)] px-2 py-1 border border-transparent rounded-md no-underline hover:text-[#5B9A8B]",
+              "absolute flex items-center w-[calc(100%-1rem)] px-2 py-1 border border-transparent rounded-md no-underline hover:text-[#5B9A8B] hover:font-medium",
               {
                 ["text-[#F6ECA9] font-medium"]: trigger.href === pathname,
                 ["text-muted-foreground"]: trigger.href !== pathname,
