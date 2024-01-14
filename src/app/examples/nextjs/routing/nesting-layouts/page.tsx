@@ -2,22 +2,16 @@
 
 import { routingData } from "@/data/routing";
 
-import { useParams } from "next/navigation";
-
 export default function Page() {
-  const params = useParams();
-
-  const slug = params.slug as string;
-
-  const data = routingData.find((data) => data.key === slug.replace("-", " "));
+  const data = routingData.find((data) => data.key === "nesting layouts");
 
   return (
-    <div className="text-sm">
+    <div>
       <h3 className="mt-4 mb-2 text-lg font-bold capitalize">
-        {slug.replace("-", " ")}
+        Nesting Layouts
       </h3>
       {data &&
-        <ul className="pl-6 list-disc">
+        <ul className="pl-6 text-sm list-disc">
           {data.description.map((description, i) => (
             <li className="pl-1 my-2" key={`description-${i}`}>
               {description}

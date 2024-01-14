@@ -1,19 +1,19 @@
 "use client";
 
-import { categories } from "@/data/categories";
+import { movieCategories, apparelCategory } from "@/data/categories";
 
 import { useCallback, useState } from "react";
 import Link from "next/link";
-import { useParams, useSelectedLayoutSegments } from "next/navigation";
+import { useParams } from "next/navigation";
 
 import clsx from "clsx";
-import { Lock } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const params = useParams();
-  const segments = useSelectedLayoutSegments();
+
+  const categories = params.category === "movie" ? movieCategories : apparelCategory;
 
   const [clicks, setClicks] = useState(0);
 
@@ -23,38 +23,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="p-4 space-y-4 border border-zinc-600">
-      <div className="flex items-center gap-4 px-2 py-2 text-sm">
-        <Lock className="w-4 h-4" />
-        <div>
-          <span className="text-muted-foreground">jgpark.in</span>
-        </div>
-        <span className="text-zinc-500">/</span>
-        {segments.map((segment) => (
-          <>
-            <span className="text-zinc-200" key={segment}>
-              {segment}
-            </span>
-            <span className="text-zinc-500">/</span>
-          </>
-        ))}
-      </div>
       <div className="flex items-center justify-between px-2">
         <div className="flex gap-4">
           <Link
-            href={`/examples/nextjs/routing/${params.slug}`}
+            href={`/examples/nextjs/routing/nesting-layouts/${params.category}`}
             className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
-              ["bg-zinc-700 hover:bg-zinc-500"]: params.category,
-              ["bg-[#5B9A8B]"]: !params.category,
+              ["bg-zinc-700 hover:bg-zinc-500"]: params.subCategory,
+              ["bg-[#5B9A8B]"]: !params.subCategory,
             })}
           >
             Home
           </Link>
           {categories.map((category) => (
             <Link
-              href={`/examples/nextjs/routing/${params.slug}/${category.key}`}
+              href={`/examples/nextjs/routing/nesting-layouts/${params.category}/${category.key}`}
               className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
-                ["bg-zinc-700 hover:bg-zinc-500"]: params.category !== category.key,
-                ["bg-[#5B9A8B]"]: params.category === category.key,
+                ["bg-zinc-700 hover:bg-zinc-500"]: params.subCategory !== category.key,
+                ["bg-[#5B9A8B]"]: params.subCategory === category.key,
               })}
               key={category.key}
             >
@@ -66,9 +51,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {clicks} Clicks
         </Button>
       </div>
-      <div className="px-2">
-        {children}
-      </div>
+      <div className="px-2">{children}</div>
     </div>
   );
 }
