@@ -12,7 +12,7 @@ export const routingData = [
     key: "route groups",
     description: [
       "You can mark a folder as a Route Group to prevent the folder from being included in the route's URL path.",
-      "A route group can be created by wrapping a folder's name in parenthesis:",
+      "A route group can be created by wrapping a folder's name in parenthesis.",
     ],
   },
 ];
