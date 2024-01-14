@@ -9,8 +9,8 @@ export const categories: Category[] = [
     name: "movie",
   },
   {
-    key: "clothing",
-    name: "clothing",
+    key: "apparel",
+    name: "apparel",
   },
 ];
 
@@ -33,7 +33,7 @@ export const movieCategories: Category[] = [
   },
 ];
 
-export const clothinglCategory: Category[] = [
+export const apparelCategory: Category[] = [
   {
     key: "top",
     name: "top",
