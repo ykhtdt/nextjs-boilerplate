@@ -23,14 +23,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               slug: c.key,
             })),
             {
-              key: 'checkout',
-              name: 'Checkout',
-              slug: 'checkout',
+              key: 'order',
+              name: 'Order',
+              slug: 'order',
             },
             {
               key: 'campaign',
               name: 'Campaign',
-              slug: 'checkout',
+              slug: 'campaign',
             },
           ]}
         />

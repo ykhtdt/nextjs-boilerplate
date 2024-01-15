@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <BadgeLayout display="Checkout Layout">
+    <BadgeLayout display="Order Layout">
       <AddressBar />
       <div className="flex items-center justify-between px-2">
         <Button
