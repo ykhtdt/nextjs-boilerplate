@@ -128,4 +128,4 @@ export function GlobalNavAccordion({ trigger, item }: GlobalNavAccordionProps) {
       </AccordionItem>
     </Accordion>
   );
-};
+}

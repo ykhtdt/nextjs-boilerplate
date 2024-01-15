@@ -14,8 +14,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           path={`/examples/nextjs/routing/route-groups`}
           items={[
             {
-              key: 'home',
-              name: 'Home',
+              key: "home",
+              name: "Home",
             },
             ...categories.map((c) => ({
               key: c.key,
@@ -23,22 +23,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               slug: c.key,
             })),
             {
-              key: 'order',
-              name: 'Order',
-              slug: 'order',
+              key: "order",
+              name: "Order",
+              slug: "order",
             },
             {
-              key: 'campaign',
-              name: 'Campaign',
-              slug: 'campaign',
+              key: "campaign",
+              name: "Campaign",
+              slug: "campaign",
             },
           ]}
         />
         <ClickCounter />
       </div>
-      <div className="px-2">
-        {children}
-      </div>
+      <div className="px-2">{children}</div>
     </BadgeLayout>
   );
 }

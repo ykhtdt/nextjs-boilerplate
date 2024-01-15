@@ -57,9 +57,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <ClickCounter />
       </div>
-      <div className="px-2">
-        {children}
-      </div>
+      <div className="px-2">{children}</div>
     </div>
   );
 }

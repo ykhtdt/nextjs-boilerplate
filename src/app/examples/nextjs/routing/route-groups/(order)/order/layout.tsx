@@ -7,5 +7,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <BadgeLayout display="Children Layout">
       <div className="px-2">{children}</div>
     </BadgeLayout>
-  )
+  );
 }
