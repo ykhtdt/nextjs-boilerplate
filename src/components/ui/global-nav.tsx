@@ -39,7 +39,7 @@ export default function GlobalNav() {
               {items.map((item) => (
                 <div className="pb-4" key={item.key}>
                   <div className="px-2 mb-2 text-sm font-semibold rounded-md">{item.name}</div>
-                  <div className="grid grid-flow-row text-sm auto-rows-max">
+                  <div className="grid grid-flow-row text-sm auto-rows-max px-0.5">
                     {item.subItem.map((sub) => {
                       const isActive = sub.href === pathname;
 
@@ -53,7 +53,7 @@ export default function GlobalNav() {
                         <Link
                           href={sub.href}
                           className={clsx(
-                            "flex items-center w-full px-2 py-1 border border-transparent rounded-md group hover:text-teal-700 hover:font-medium",
+                            "flex items-center w-full px-2 py-1 rounded-md hover:text-teal-700 hover:font-medium",
                             {
                               ["text-yellow-200 font-medium"]: isActive,
                               ["text-muted-foreground"]: !isActive,
@@ -93,9 +93,9 @@ export function GlobalNavAccordion({ trigger, item }: GlobalNavAccordionProps) {
   }, [trigger, pathname]);
 
   return (
-    <Accordion type="multiple" value={value} onValueChange={handleValueChange} className="px-2">
+    <Accordion type="multiple" value={value} onValueChange={handleValueChange} className="pr-2">
       <AccordionItem value={trigger.key}>
-        <AccordionTrigger className="relative">
+        <AccordionTrigger className="relative pt-1 pb-2">
           <Link
             href={trigger.href}
             className={clsx(
@@ -116,7 +116,7 @@ export function GlobalNavAccordion({ trigger, item }: GlobalNavAccordionProps) {
             <AccordionContent key={child.key}>
               <Link
                 href={`${trigger.href}/${child.slug}`}
-                className={clsx("relative", {
+                className={clsx("relative hover:text-teal-700 hover:font-medium", {
                   ["text-yellow-200 font-medium border-yellow-200"]: pathname.includes(`${trigger.href}/${child.slug}`),
                 })}
               >
