@@ -11,7 +11,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <AddressBar />
       <div className="flex items-center justify-between px-2">
         <TabGroup
-          path={`/examples/nextjs/routing/route-groups`}
+          path="/examples/nextjs/routing/route-groups"
           items={[
             {
               key: "home",
