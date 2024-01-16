@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
@@ -21,14 +21,10 @@ export function TabGroup({ path, items }: TabGroupProps) {
   return (
     <div className="flex flex-wrap items-center gap-4">
       {items.map((item) => (
-        <Tab
-          path={path}
-          item={item}
-          key={path + `_${item.key}`}
-        />
+        <Tab path={path} item={item} key={path + `_${item.key}`} />
       ))}
     </div>
-  )
+  );
 }
 
 export interface TabProps {
@@ -41,7 +37,7 @@ export function Tab({ path, item }: TabProps) {
 
   const href = !item.slug ? path : path + `/${item.key}`;
 
-  const isActive = segment === null && !item.slug || segment === item.slug;
+  const isActive = (segment === null && !item.slug) || segment === item.slug;
 
   return (
     <Link
@@ -53,5 +49,5 @@ export function Tab({ path, item }: TabProps) {
     >
       {item.name}
     </Link>
-  )
+  );
 }

@@ -44,6 +44,11 @@ export const items: { name: string; key: string; subItem: SubItem[] }[] = [
     key: "state management",
     subItem: [
       {
+        name: "Provider",
+        key: "provider",
+        href: "/examples/jotai/provider",
+      },
+      {
         name: "Store",
         key: "store",
         href: "/examples/jotai/store",

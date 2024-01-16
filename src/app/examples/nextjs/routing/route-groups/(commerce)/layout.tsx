@@ -11,11 +11,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <AddressBar />
       <div className="flex items-center justify-between px-2">
         <TabGroup
-          path={`/examples/nextjs/routing/route-groups`}
+          path="/examples/nextjs/routing/route-groups"
           items={[
             {
-              key: 'home',
-              name: 'Home',
+              key: "home",
+              name: "Home",
             },
             ...categories.map((c) => ({
               key: c.key,
@@ -23,22 +23,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               slug: c.key,
             })),
             {
-              key: 'checkout',
-              name: 'Checkout',
-              slug: 'checkout',
+              key: "order",
+              name: "Order",
+              slug: "order",
             },
             {
-              key: 'campaign',
-              name: 'Campaign',
-              slug: 'checkout',
+              key: "campaign",
+              name: "Campaign",
+              slug: "campaign",
             },
           ]}
         />
         <ClickCounter />
       </div>
-      <div className="px-2">
-        {children}
-      </div>
+      <div className="px-2">{children}</div>
     </BadgeLayout>
   );
 }

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -19,5 +19,5 @@ export function ClickCounter() {
     >
       {clicks} Clicks
     </Button>
-  )
+  );
 }

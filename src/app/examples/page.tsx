@@ -1,8 +1,6 @@
-"use client";
-
 export default function ExamplesPage() {
   return (
-    <div>
+    <>
       <div className="space-y-2">
         <h1 className="text-4xl font-bold tracking-tight">Introduction</h1>
         <p className="text-zinc-300">
@@ -20,6 +18,6 @@ export default function ExamplesPage() {
           <li className="mt-2">shadcn/ui</li>
         </ul>
       </div>
-    </div>
+    </>
   );
 }

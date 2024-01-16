@@ -82,10 +82,6 @@
 body {
   overflow-y: hidden;
 
-  &::-webkit-scrollbar {
-    width: 0;
-  }
-
   &.scroll {
     overflow-y: auto;
   }

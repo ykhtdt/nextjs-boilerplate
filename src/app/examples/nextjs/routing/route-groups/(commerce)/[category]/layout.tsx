@@ -20,8 +20,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           path={`/examples/nextjs/routing/route-groups/${params.category}`}
           items={[
             {
-              key: 'home',
-              name: 'Home',
+              key: "home",
+              name: "Home",
             },
             ...categories.map((c) => ({
               key: c.key,

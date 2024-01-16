@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge";
 
 interface Props {
   display: string;
@@ -8,15 +8,10 @@ interface Props {
 export function BadgeLayout({ display, children }: Props) {
   return (
     <div className="relative px-4 py-6 border border-zinc-800">
-      <Badge
-        variant="secondary"
-        className="absolute font-normal uppercase tracking-widest -top-2.5 bg-zinc-800 text-[10px]"
-      >
+      <Badge variant="secondary" className="absolute font-normal uppercase tracking-widest -top-2.5 bg-zinc-800 text-[10px]">
         {display}
       </Badge>
-      <div className="space-y-6">
-        {children}
-      </div>
+      <div className="space-y-6">{children}</div>
     </div>
   );
 }

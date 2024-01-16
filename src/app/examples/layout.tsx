@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 import { ChevronRight } from "lucide-react";
@@ -11,6 +12,10 @@ export default function ExamplesLayout({ children }: { children: React.ReactNode
   const pathname = usePathname();
 
   const isIntro = pathname === "/examples";
+
+  useEffect(() => {
+    document.body.classList.add('scroll');
+  }, [])
 
   return (
     <div className="flex-1">
