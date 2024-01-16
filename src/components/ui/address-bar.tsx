@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { useSelectedLayoutSegments } from "next/navigation";
 
 import { Lock } from "lucide-react";
@@ -17,12 +18,12 @@ export function AddressBar() {
       </div>
       <span className="text-zinc-500">/</span>
       {segmentsWithoutRouteGroup.map((segment) => (
-        <>
-          <span className="text-zinc-200" key={segment}>
+        <Fragment key={segment}>
+          <span className="text-zinc-200">
             {segment}
           </span>
           <span className="text-zinc-500">/</span>
-        </>
+        </Fragment>
       ))}
     </div>
   );
