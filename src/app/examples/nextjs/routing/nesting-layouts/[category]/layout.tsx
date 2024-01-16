@@ -2,12 +2,11 @@
 
 import { movieCategories, apparelCategory } from "@/data/categories";
 
-import Link from "next/link";
 import { useParams } from "next/navigation";
 
-import clsx from "clsx";
-
 import { ClickCounter } from "@/components/ui/click-counter";
+import { BadgeLayout } from "@/components/layout/badge-layout";
+import { TabGroup } from "@/components/ui/tab-group";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const params = useParams();
@@ -15,34 +14,25 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const categories = params.category === "movie" ? movieCategories : apparelCategory;
 
   return (
-    <div className="p-4 space-y-4 border border-zinc-600">
+    <BadgeLayout display="Children Layout">
       <div className="flex items-center justify-between px-2">
-        <div className="flex gap-4">
-          <Link
-            href={`/examples/nextjs/routing/nesting-layouts/${params.category}`}
-            className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
-              ["bg-zinc-700 hover:bg-zinc-500"]: params.subCategory,
-              ["bg-teal-700"]: !params.subCategory,
-            })}
-          >
-            Home
-          </Link>
-          {categories.map((category) => (
-            <Link
-              href={`/examples/nextjs/routing/nesting-layouts/${params.category}/${category.key}`}
-              className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
-                ["bg-zinc-700 hover:bg-zinc-500"]: params.subCategory !== category.key,
-                ["bg-teal-700"]: params.subCategory === category.key,
-              })}
-              key={category.key}
-            >
-              {category.name}
-            </Link>
-          ))}
-        </div>
+        <TabGroup
+          path={`/examples/nextjs/routing/nesting-layouts/${params.category}`}
+          items={[
+            {
+              key: "home",
+              name: "Home",
+            },
+            ...categories.map((c) => ({
+              key: c.key,
+              name: c.name,
+              slug: c.key,
+            })),
+          ]}
+        />
         <ClickCounter />
       </div>
       <div className="px-2">{children}</div>
-    </div>
+    </BadgeLayout>
   );
 }
