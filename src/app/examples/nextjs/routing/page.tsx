@@ -5,12 +5,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
-export type Post = {
-  title: string;
-  description: string;
-  href: string;
-};
-
 export default async function Page() {
   const posts = await getNestedPageContent();
 
