@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Nesting Layouts",
+    "description": "By default, layouts in the file hierarchy are nested.",
+    "href": "/examples/nextjs/routing/nesting-layouts"
+  },
+  {
+    "title": "Route Groups",
+    "description": "Folders can be represented as path groups.",
+    "href": "/examples/nextjs/routing/route-groups"
+  }
+]
