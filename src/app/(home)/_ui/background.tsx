@@ -29,7 +29,7 @@ export default function Background() {
       setPlaybackRate(1);
     }, 2000);
 
-    return function cleaning() {
+    return () => {
       if (isStarted) {
         reset;
       }
@@ -37,7 +37,7 @@ export default function Background() {
       if (!isStarted) {
         clearTimeout(reset);
       }
-    };
+    }
   }, [isStarted]);
 
   if (isMounted) {
