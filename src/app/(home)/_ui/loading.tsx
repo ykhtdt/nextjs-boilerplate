@@ -19,7 +19,7 @@ export default function Loading() {
       <div className="w-full h-full mx-auto max-w-7xl">
         <div className="flex flex-col items-center justify-center w-full h-full">
           <button className={styles.button} onClick={handleClick} type="button">
-            start
+            Start
           </button>
         </div>
       </div>
