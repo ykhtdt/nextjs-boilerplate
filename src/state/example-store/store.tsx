@@ -2,10 +2,15 @@
 
 import { ReactNode } from 'react';
 
-import { Provider, createStore } from 'jotai'
+import { Provider, createStore, } from 'jotai'
 
-const store = createStore();
+const baseStore = createStore();
 
-export const ExampleProvider = ({ children }: { children: ReactNode }) => {
-  return <Provider store={store}>{children}</Provider>;
+type Props = {
+  store?: ReturnType<typeof createStore>;
+  children: ReactNode;
+}
+
+export const ExampleProvider = ({ store, children }: Props) => {
+  return <Provider store={store || baseStore}>{children}</Provider>;
 };
