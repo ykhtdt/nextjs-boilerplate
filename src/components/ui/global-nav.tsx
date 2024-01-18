@@ -118,6 +118,7 @@ export function GlobalNavAccordion({ trigger, item }: GlobalNavAccordionProps) {
                 href={`${trigger.href}/${child.slug}`}
                 className={clsx("relative hover:text-teal-700 hover:font-medium", {
                   ["text-yellow-200 font-medium border-yellow-200"]: pathname.includes(`${trigger.href}/${child.slug}`),
+                  ["text-muted-foreground"]: !pathname.includes(`${trigger.href}/${child.slug}`),
                 })}
               >
                 {child.name}
