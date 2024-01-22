@@ -1,23 +1,17 @@
-"use client";
+import { categories } from "@/data/categories";
 
-import { movieCategories, apparelCategory } from "@/data/categories";
-
-import { useParams } from "next/navigation";
-
-import { ClickCounter } from "@/components/ui/click-counter";
 import { BadgeLayout } from "@/components/layout/badge-layout";
+import { AddressBar } from "@/components/ui/address-bar";
 import { TabGroup } from "@/components/ui/tab-group";
+import { ClickCounter } from "@/components/ui/click-counter";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const params = useParams();
-
-  const categories = params.category === "movie" ? movieCategories : apparelCategory;
-
   return (
-    <BadgeLayout display="Children Layout">
+    <BadgeLayout display="Home Layout">
+      <AddressBar />
       <div className="flex items-center justify-between px-2">
         <TabGroup
-          path={`/examples/nextjs/routing/nesting-layouts/${params.category}`}
+          path="/docs/nextjs/routing/route-groups"
           items={[
             {
               key: "home",
@@ -28,6 +22,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               name: c.name,
               slug: c.key,
             })),
+            {
+              key: "order",
+              name: "Order",
+              slug: "order",
+            },
+            {
+              key: "campaign",
+              name: "Campaign",
+              slug: "campaign",
+            },
           ]}
         />
         <ClickCounter />

@@ -1,17 +1,23 @@
-import { categories } from "@/data/categories";
+"use client";
 
+import { movieCategories, apparelCategory } from "@/data/categories";
+
+import { useParams } from "next/navigation";
+
+import { TabGroup } from "@/components/ui/tab-group";
 import { ClickCounter } from "@/components/ui/click-counter";
 import { BadgeLayout } from "@/components/layout/badge-layout";
-import { TabGroup } from "@/components/ui/tab-group";
-import { AddressBar } from "@/components/ui/address-bar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const params = useParams();
+
+  const categories = params.category === "movie" ? movieCategories : apparelCategory;
+
   return (
-    <BadgeLayout display="Layout">
-      <AddressBar />
+    <BadgeLayout display="Children Layout">
       <div className="flex items-center justify-between px-2">
         <TabGroup
-          path="/examples/nextjs/routing/nesting-layouts"
+          path={`/docs/nextjs/routing/route-groups/${params.category}`}
           items={[
             {
               key: "home",

@@ -1,11 +1,11 @@
-export default function ExamplesPage() {
+export default function docsPage() {
   return (
     <>
       <div className="space-y-2">
         <h1 className="text-4xl font-bold tracking-tight">Introduction</h1>
         <p className="text-zinc-300">
           To establish a front-end development boilerplate, the goal is to acquire additional essential knowledge and enhance proficiency
-          through practical examples.
+          through practical docs.
         </p>
       </div>
       <div className="pt-8">

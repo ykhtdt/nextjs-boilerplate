@@ -12,7 +12,7 @@ export const items: { name: string; key: string; subItem: SubItem[] }[] = [
       {
         name: "Introduction",
         key: "intro",
-        href: "/examples",
+        href: "/docs",
       },
     ],
   },
@@ -23,7 +23,7 @@ export const items: { name: string; key: string; subItem: SubItem[] }[] = [
       {
         name: "Routing",
         key: "routing",
-        href: "/examples/nextjs/routing",
+        href: "/docs/nextjs/routing",
         children: [
           {
             name: "Nesting Layouts",
@@ -46,17 +46,17 @@ export const items: { name: string; key: string; subItem: SubItem[] }[] = [
       {
         name: "Provider",
         key: "provider",
-        href: "/examples/jotai/provider",
+        href: "/docs/jotai/provider",
       },
       {
         name: "Store",
         key: "store",
-        href: "/examples/jotai/store",
+        href: "/docs/jotai/store",
       },
       {
         name: "Atom",
         key: "atom",
-        href: "/examples/jotai/atom",
+        href: "/docs/jotai/atom",
       },
     ],
   },
