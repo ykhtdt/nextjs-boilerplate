@@ -25,9 +25,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_200px]">
             <div className="w-full min-w-0 mx-auto">
               {isIntro ? (
-                <div className="-mt-4 mb-7 md:mb-10">
+                <div className="-mt-4 mb-7 md:mt-2 md:mb-10">
                   <div className="flex flex-wrap items-center gap-2 text-sm">
-                    <span className="overflow-hidden text-ellipsis whitespace-nowrap text-muted-foreground">docs</span>
+                    <span className="overflow-hidden text-ellipsis whitespace-nowrap text-muted-foreground">Docs</span>
                     <span>
                       <ChevronRight className="w-4 h-4" />
                     </span>
