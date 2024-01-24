@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default async function Page() {
-  const posts = await getNestedPageContent('routing');
+  const posts = await getNestedPageContent('rendering');
 
   return (
     <div>
       <div className="space-y-2">
-        <h1 className="text-4xl font-bold tracking-tight">Routing</h1>
-        <p className="text-zinc-300">This page covers Next.js routing, based on the App Router introduced starting from Next.js 13.</p>
+        <h1 className="text-4xl font-bold tracking-tight">Rendering</h1>
+        <p className="text-zinc-300">Combining React Server Components and Suspense with the new Streaming SSR is highly anticipated for the future evolution of React.</p>
       </div>
       <div className="pt-8 space-y-6">
         <h2 className="pb-2 mt-12 text-2xl font-semibold tracking-tight border-b">Next Steps</h2>
