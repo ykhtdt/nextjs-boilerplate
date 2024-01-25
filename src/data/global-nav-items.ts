@@ -35,6 +35,11 @@ export const items: { name: string; key: string; subItem: SubItem[] }[] = [
             key: "route groups",
             slug: "route-groups",
           },
+          {
+            name: "Loading",
+            key: "loading",
+            slug: "loading",
+          },
         ],
       },
     ],
