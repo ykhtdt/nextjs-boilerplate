@@ -37,23 +37,6 @@ export const items: { name: string; key: string; subItem: SubItem[] }[] = [
           },
         ],
       },
-      {
-        name: "Rendering",
-        key: "rendering",
-        href: "/docs/nextjs/rendering",
-        children: [
-          {
-            name: "Server Components",
-            key: "server components",
-            slug: "server-components",
-          },
-          {
-            name: "Client Components",
-            key: "client components",
-            slug: "client-components",
-          },
-        ],
-      },
     ],
   },
   {
