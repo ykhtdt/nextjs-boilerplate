@@ -7,6 +7,7 @@ import { ChevronRight } from "lucide-react";
 
 import GlobalNav from "@/components/ui/global-nav";
 import Breadcrumb from "@/components/ui/breadcrumb";
+import Header from "@/components/ui/header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -15,10 +16,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     document.body.classList.add('scroll');
-  }, [])
+
+    return () => {
+      document.body.classList.remove('scroll');
+    }
+  }, []);
 
   return (
     <>
+      <Header />
       <div className="border-b">
         <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
           <GlobalNav />
