@@ -1,6 +1,6 @@
 import { Skeleton } from '@/components/ui/skeleton';
 
-export default async function Page({ params }: { params: { category: string } }) {
+export default async function Page({ params }: { params: { subCategory: string } }) {
 
   const res = await fetch(
     `${process.env.API_URL}/items`,
@@ -17,11 +17,9 @@ export default async function Page({ params }: { params: { category: string } })
 
   const repeat = Array.from({ length });
 
-  const title = 'All' + ` ${params.category}`
-
   return (
     <>
-      <h3 className="mt-4 mb-2 text-lg font-bold capitalize">{title}</h3>
+      <h3 className="mt-4 mb-2 text-lg font-bold capitalize">{params.subCategory}</h3>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {repeat.map((_, i) => (
           <div className="p-4 border rounded-lg" key={i}>

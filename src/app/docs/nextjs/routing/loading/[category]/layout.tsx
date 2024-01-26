@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <BadgeLayout display="Children Layout">
       <div className="flex items-center justify-between px-2">
         <TabGroup
-          path={`/docs/nextjs/routing/nesting-layouts/${params.category}`}
+          path={`/docs/nextjs/routing/loading/${params.category}`}
           items={[
             {
               key: "home",

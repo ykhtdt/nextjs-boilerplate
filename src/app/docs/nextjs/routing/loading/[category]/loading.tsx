@@ -1,27 +1,13 @@
+"use client"
+
 import { Skeleton } from '@/components/ui/skeleton';
 
-export default async function Page({ params }: { params: { category: string } }) {
-
-  const res = await fetch(
-    `${process.env.API_URL}/items`,
-    {
-      cache: 'no-cache',
-    },
-  );
-
-  if (!res.ok) {
-    throw new Error('Something went wrong. Please try again.')
-  }
-
-  const { length } = await res.json();
-
-  const repeat = Array.from({ length });
-
-  const title = 'All' + ` ${params.category}`
+export default function Loading() {
+  const repeat = Array.from({ length: 6 });
 
   return (
     <>
-      <h3 className="mt-4 mb-2 text-lg font-bold capitalize">{title}</h3>
+      <h3 className="mt-4 mb-2 text-lg font-bold text-orange-400 capitalize">Loading...</h3>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {repeat.map((_, i) => (
           <div className="p-4 border rounded-lg" key={i}>
