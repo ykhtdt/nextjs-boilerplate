@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from '@/components/ui/badge';
 import { BadgeLayout } from '@/components/layout/badge-layout';
 
-import Counter from '@/app/examples/jotai/_ui/counter';
+import Counter from '@/app/docs/jotai/_ui/counter';
 
 import { ExampleProvider } from '@/state/example-store/store';
 

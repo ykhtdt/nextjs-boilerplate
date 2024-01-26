@@ -1,17 +1,17 @@
 import { categories } from "@/data/categories";
 
-import { ClickCounter } from "@/components/ui/click-counter";
 import { BadgeLayout } from "@/components/layout/badge-layout";
-import { TabGroup } from "@/components/ui/tab-group";
 import { AddressBar } from "@/components/ui/address-bar";
+import { TabGroup } from "@/components/ui/tab-group";
+import { ClickCounter } from "@/components/ui/click-counter";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <BadgeLayout display="Layout">
+    <BadgeLayout display="Commerce Layout">
       <AddressBar />
       <div className="flex items-center justify-between px-2">
         <TabGroup
-          path="/examples/nextjs/routing/nesting-layouts"
+          path="/docs/nextjs/routing/route-groups"
           items={[
             {
               key: "home",
@@ -22,6 +22,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               name: c.name,
               slug: c.key,
             })),
+            {
+              key: "order",
+              name: "Order",
+              slug: "order",
+            },
+            {
+              key: "campaign",
+              name: "Campaign",
+              slug: "campaign",
+            },
           ]}
         />
         <ClickCounter />

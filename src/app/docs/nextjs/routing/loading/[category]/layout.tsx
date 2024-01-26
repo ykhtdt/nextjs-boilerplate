@@ -4,9 +4,9 @@ import { movieCategories, apparelCategory } from "@/data/categories";
 
 import { useParams } from "next/navigation";
 
-import { TabGroup } from "@/components/ui/tab-group";
 import { ClickCounter } from "@/components/ui/click-counter";
 import { BadgeLayout } from "@/components/layout/badge-layout";
+import { TabGroup } from "@/components/ui/tab-group";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const params = useParams();
@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <BadgeLayout display="Children Layout">
       <div className="flex items-center justify-between px-2">
         <TabGroup
-          path={`/examples/nextjs/routing/route-groups/${params.category}`}
+          path={`/docs/nextjs/routing/loading/${params.category}`}
           items={[
             {
               key: "home",

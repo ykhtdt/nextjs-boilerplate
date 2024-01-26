@@ -7,11 +7,11 @@ import { ClickCounter } from "@/components/ui/click-counter";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <BadgeLayout display="Commerce Layout">
+    <BadgeLayout display="Home Layout">
       <AddressBar />
       <div className="flex items-center justify-between px-2">
         <TabGroup
-          path="/examples/nextjs/routing/route-groups"
+          path="/docs/nextjs/routing/route-groups"
           items={[
             {
               key: "home",

@@ -8,8 +8,8 @@ export type Post = {
   href: string;
 };
 
-export const getNestedPageContent = cache(async () => {
-  const filePath = path.join(process.cwd(), "data", "nextjs", "routing.json");
+export const getNestedPageContent = cache(async (page: string) => {
+  const filePath = path.join(process.cwd(), "data", "nextjs", `${page}.json`);
 
   return readFile(filePath, "utf-8").then<Post[]>(JSON.parse);
 });
