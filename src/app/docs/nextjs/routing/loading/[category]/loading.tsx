@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { Skeleton } from '@/components/ui/skeleton';
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
   const repeat = Array.from({ length: 6 });
@@ -27,5 +27,5 @@ export default function Loading() {
         ))}
       </div>
     </>
-  )
+  );
 }

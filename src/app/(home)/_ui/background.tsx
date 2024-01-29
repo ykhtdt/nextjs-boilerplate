@@ -37,7 +37,7 @@ export default function Background() {
       if (!isStarted) {
         clearTimeout(reset);
       }
-    }
+    };
   }, [isStarted]);
 
   if (isMounted) {

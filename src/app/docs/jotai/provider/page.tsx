@@ -1,32 +1,28 @@
-"use client"
+"use client";
 
-import { Provider, createStore } from 'jotai';
+import { Provider, createStore } from "jotai";
 
 import { Separator } from "@/components/ui/separator";
-import { Badge } from '@/components/ui/badge';
-import { BadgeLayout } from '@/components/layout/badge-layout';
+import { Badge } from "@/components/ui/badge";
+import { BadgeLayout } from "@/components/layout/badge-layout";
 
-import Counter from '@/app/docs/jotai/_ui/counter';
+import Counter from "@/app/docs/jotai/_ui/counter";
 
-import { ExampleProvider } from '@/state/example-store/store';
+import { ExampleProvider } from "@/state/example-store/store";
 
 export default function Page() {
   return (
     <BadgeLayout display="Children">
       <div>
         <h3 className="mb-2 text-lg font-bold">Provider</h3>
-        <p className="text-sm leading-6">
-          The Provider component is to provide state for a component sub tree.
-        </p>
+        <p className="text-sm leading-6">The Provider component is to provide state for a component sub tree.</p>
       </div>
       <div className="relative items-center gap-8 p-6 border border-blue-600 border-dashed rouned-md">
         <Badge variant="secondary" className="absolute font-normal uppercase tracking-widest -top-2.5 bg-blue-600 text-[10px]">
           Provider A
         </Badge>
         <div className="space-y-4">
-          <p className="text-sm">
-            The 'count' atom is shared within Provider A.
-          </p>
+          <p className="text-sm">The 'count' atom is shared within Provider A.</p>
           <div className="flex flex-wrap gap-8">
             <Provider>
               <Counter />
@@ -40,9 +36,7 @@ export default function Page() {
           Provider B
         </Badge>
         <div className="space-y-4">
-          <p className="text-sm">
-            The 'count' atom is shared within Provider B.
-          </p>
+          <p className="text-sm">The 'count' atom is shared within Provider B.</p>
           <div className="flex flex-wrap gap-8">
             <Provider>
               <Counter />
@@ -116,5 +110,5 @@ export default function Page() {
         </div>
       </div>
     </BadgeLayout>
-  )
+  );
 }
