@@ -1,16 +1,12 @@
-import { Skeleton } from '@/components/ui/skeleton';
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default async function Page({ params }: { params: { subCategory: string } }) {
-
-  const res = await fetch(
-    `${process.env.API_URL}/items`,
-    {
-      cache: 'no-cache',
-    },
-  );
+  const res = await fetch(`${process.env.API_URL}/items`, {
+    cache: "no-cache",
+  });
 
   if (!res.ok) {
-    throw new Error('Something went wrong. Please try again.')
+    throw new Error("Something went wrong. Please try again.");
   }
 
   const { length } = await res.json();
@@ -39,5 +35,5 @@ export default async function Page({ params }: { params: { subCategory: string }
         ))}
       </div>
     </>
-  )
+  );
 }

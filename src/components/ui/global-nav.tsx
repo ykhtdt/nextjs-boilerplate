@@ -52,13 +52,10 @@ export default function GlobalNav() {
                       return (
                         <Link
                           href={sub.href}
-                          className={clsx(
-                            "flex items-center w-full px-2 py-1 rounded-md hover:text-teal-700 hover:font-medium",
-                            {
-                              ["text-yellow-200 font-medium"]: isActive,
-                              ["text-muted-foreground"]: !isActive,
-                            }
-                          )}
+                          className={clsx("flex items-center w-full px-2 py-1 rounded-md hover:text-teal-700 hover:font-medium", {
+                            ["text-yellow-200 font-medium"]: isActive,
+                            ["text-muted-foreground"]: !isActive,
+                          })}
                           key={sub.key}
                         >
                           {sub.name}

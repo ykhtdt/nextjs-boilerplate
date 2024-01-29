@@ -2,14 +2,14 @@
 
 import { useParams } from "next/navigation";
 
-import { Skeleton } from '@/components/ui/skeleton';
+import { Skeleton } from "@/components/ui/skeleton";
 
-export default function Page() {  
+export default function Page() {
   const params = useParams();
 
   const repeat = Array.from({ length: 9 });
 
-  const title = 'All' + ` ${params.category}`
+  const title = "All" + ` ${params.category}`;
 
   return (
     <>
@@ -33,5 +33,5 @@ export default function Page() {
         ))}
       </div>
     </>
-  )
+  );
 }

@@ -15,11 +15,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const isIntro = pathname === "/docs";
 
   useEffect(() => {
-    document.body.classList.add('scroll');
+    document.body.classList.add("scroll");
 
     return () => {
-      document.body.classList.remove('scroll');
-    }
+      document.body.classList.remove("scroll");
+    };
   }, []);
 
   return (

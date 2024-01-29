@@ -19,9 +19,7 @@ export function AddressBar() {
       <span className="text-zinc-500">/</span>
       {segmentsWithoutRouteGroup.map((segment) => (
         <Fragment key={segment}>
-          <span className="text-zinc-200">
-            {segment}
-          </span>
+          <span className="text-zinc-200">{segment}</span>
           <span className="text-zinc-500">/</span>
         </Fragment>
       ))}
