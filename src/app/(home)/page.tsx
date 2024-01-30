@@ -2,38 +2,30 @@
 
 import features from "@/data/features";
 
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import { motion, useInView } from "framer-motion";
 import { MoveRight } from "lucide-react";
 
-import { useAtomValue } from "jotai";
-import { loadingAtom } from "@/state/atom/loading";
-
 import ScrollContainer from "@/components/layout/scroll-container";
 import ScrollDown from "@/components/arrows/scroll-down";
 
 import { Button } from "@/components/ui/button";
 
-/**
- * @todo: 세션스토리지로 해당 페이지를 이미 본 경우 애니메이션 비활성화
- */
 export default function HomePage() {
-  const { isStarted } = useAtomValue(loadingAtom);
-
-  const [isCompleted, setIsCompleted] = useState(false);
-  const [isScrollable, setIsScrollable] = useState(false);
-
-  const defaultAnimations = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-    },
-  };
+  const defaultAnimation = useMemo(
+    () => ({
+      hidden: {
+        opacity: 0,
+      },
+      visible: {
+        opacity: 1,
+      },
+    }),
+    []
+  );
 
   const featureArticleRef = useRef(null);
   const isInViewFeatureArticle = useInView(featureArticleRef, { amount: 0.1, once: true });
@@ -41,26 +33,21 @@ export default function HomePage() {
   const startArticleRef = useRef(null);
   const isInViewStartArticle = useInView(startArticleRef, { amount: 0.75, once: true });
 
-  const handleTitleAnimationComplete = (animation: string | string[]) => {
-    if (animation === "visible") {
-      setIsCompleted(true);
-    }
-  };
+  const [step, setStep] = useState(0);
 
-  const handleScrollDownLoad = (animation: string | string[]) => {
-    if (animation === "visible") {
-      setIsScrollable(true);
-    }
-  };
+  const handleAnimationStep = useCallback(() => {
+    setStep((prev) => prev + 1);
+  }, []);
 
   useEffect(() => {
-    const body = document.getElementById("body");
-    if (isScrollable) {
+    if (step >= 3) {
+      const body = document.getElementById("body");
+
       if (body) {
         body.classList.add("scroll");
       }
     }
-  }, [isScrollable]);
+  }, [step]);
 
   const title = "JG's Next.js Boilerplate";
 
@@ -75,16 +62,16 @@ export default function HomePage() {
                 <motion.div
                   className="mb-4 text-xl font-medium tracking-wider text-center sm:text-2xl"
                   initial="hidden"
-                  animate={isStarted ? "visible" : "hidden"}
+                  animate={step >= 0 ? "visible" : "hidden"}
                   transition={{ staggerChildren: 0.1 }}
-                  onAnimationComplete={handleTitleAnimationComplete}
+                  onAnimationComplete={handleAnimationStep}
                   aria-hidden
                 >
                   {title.split("").map((char, i) =>
                     char === " " ? (
                       <Fragment key={`${char}_${i}`}>&nbsp;</Fragment>
                     ) : (
-                      <motion.span className="inline-block" key={`${char}_${i}`} variants={defaultAnimations}>
+                      <motion.span className="inline-block" key={`${char}_${i}`} variants={defaultAnimation}>
                         {char}
                       </motion.span>
                     )
@@ -93,18 +80,19 @@ export default function HomePage() {
                 <motion.div
                   className="text-sm text-center text-gray-400 mb-14 sm:text-xl"
                   initial="hidden"
-                  animate={isCompleted ? "visible" : "hidden"}
+                  animate={step >= 1 ? "visible" : "hidden"}
+                  onAnimationComplete={handleAnimationStep}
                 >
-                  <motion.p variants={defaultAnimations}>Start front-end development with feature-packed, Next.js boilerplate.</motion.p>
+                  <motion.p variants={defaultAnimation}>Start front-end development with feature-packed, Next.js boilerplate.</motion.p>
                 </motion.div>
                 <motion.div
                   className="absolute bottom-24"
                   initial="hidden"
-                  animate={isCompleted ? "visible" : "hidden"}
+                  animate={step >= 2 ? "visible" : "hidden"}
                   transition={{ delayChildren: 0.1 }}
-                  onAnimationComplete={handleScrollDownLoad}
+                  onAnimationComplete={handleAnimationStep}
                 >
-                  <motion.div variants={defaultAnimations}>
+                  <motion.div variants={defaultAnimation}>
                     <ScrollDown />
                   </motion.div>
                 </motion.div>
@@ -112,10 +100,10 @@ export default function HomePage() {
             </div>
           </article>
           <article id="feature">
-            <div className="px-4 pb-4 mx-auto sm:h-screen-dvh max-w-8xl sm:px-6 md:px-8">
-              <div className="relative flex flex-col items-center justify-center h-auto sm:h-full">
+            <div className="px-4 pb-4 mx-auto xl:min-h-screen-dvh max-w-8xl sm:px-6 md:px-8">
+              <div className="relative flex flex-col items-center justify-center">
                 <motion.div
-                  className="grid w-full grid-cols-1 grid-rows-3 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3"
+                  className="grid w-full grid-cols-1 grid-rows-3 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
                   ref={featureArticleRef}
                   initial="hidden"
                   animate={isInViewFeatureArticle ? "visible" : "hidden"}
@@ -125,7 +113,7 @@ export default function HomePage() {
                     <motion.div
                       className="flex flex-col items-center self-start justify-center gap-6 p-6 overflow-hidden"
                       key={`${feature}_${i}`}
-                      variants={defaultAnimations}
+                      variants={defaultAnimation}
                       transition={{ duration: 1.25 }}
                     >
                       <div className="flex items-center justify-center w-16 h-16 bg-blue-700 rounded-md">
@@ -146,16 +134,15 @@ export default function HomePage() {
             </div>
           </article>
           <article id="start">
-            <div className="px-4 pb-4 mx-auto sm:h-screen-dvh max-w-8xl sm:px-6 md:px-8">
-              <div className="relative flex flex-col items-center justify-center h-auto sm:h-full">
+            <div className="px-4 pb-4 mx-auto h-[600px] sm:min-h-screen-dvh max-w-8xl sm:px-6 md:px-8">
+              <div className="relative flex flex-col items-center justify-center h-full">
                 <motion.div
                   ref={startArticleRef}
                   initial="hidden"
                   animate={isInViewStartArticle ? "visible" : "hidden"}
                   transition={{ delayChildren: 0.1 }}
                 >
-                  <motion.div className="flex flex-col items-center w-full" variants={defaultAnimations} transition={{ duration: 2 }}>
-                    <h2 className="mb-12 font-bold tracking-wide sm:text-4xl">View with docs</h2>
+                  <motion.div className="flex flex-col items-center w-full" variants={defaultAnimation} transition={{ duration: 2 }}>
                     <Button
                       variant="outline"
                       className="h-auto p-0 text-base font-medium uppercase transition-colors border border-blue-600 rounded-lg hover:bg-inherit hover:border-blue-600/80"
