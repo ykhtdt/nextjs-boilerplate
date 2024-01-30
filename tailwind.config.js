@@ -18,6 +18,9 @@ module.exports = {
       maxWidth: {
         "8xl": "96rem",
       },
+      minHeight: {
+        "screen-dvh": "100dvh",
+      },
       height: {
         "screen-dvh": "100dvh",
       },
