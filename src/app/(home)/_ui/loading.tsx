@@ -1,12 +1,12 @@
 "use client";
 
 import { useSetAtom } from "jotai";
-import { loadingAtom } from "@/state/atom/loading";
+import { homeAtom } from "@/state/atom/home";
 
 import styles from "./loading.module.scss";
 
 export default function Loading() {
-  const setIntroValue = useSetAtom(loadingAtom);
+  const setIntroValue = useSetAtom(homeAtom);
 
   const handleClick = () => {
     setIntroValue({

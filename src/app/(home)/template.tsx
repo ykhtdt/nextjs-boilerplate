@@ -3,13 +3,13 @@
 import { ReactNode, Fragment } from "react";
 
 import { useAtomValue } from "jotai";
-import { loadingAtom } from "@/state/atom/loading";
+import { homeAtom } from "@/state/atom/home";
 
 import Background from "./_ui/background";
 import Loading from "./_ui/loading";
 
 export default function HomeTemplate({ children }: { children: ReactNode }) {
-  const { isStarted } = useAtomValue(loadingAtom);
+  const { isStarted } = useAtomValue(homeAtom);
 
   if (!isStarted) {
     return (

@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 
 import { useAtomValue } from "jotai";
-import { loadingAtom } from "@/state/atom/loading";
+import { homeAtom } from "@/state/atom/home";
 
 import styles from "./background.module.scss";
 
 export default function Background() {
-  const { isStarted } = useAtomValue(loadingAtom);
+  const { isStarted } = useAtomValue(homeAtom);
 
   const [isMounted, setIsMounted] = useState(false);
 
