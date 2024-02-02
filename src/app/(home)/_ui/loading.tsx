@@ -3,13 +3,13 @@
 import { useSetAtom } from "jotai";
 import { homeAtom } from "@/state/atom/home";
 
-import styles from "./loading.module.scss";
+import { Button } from "@/components/ui/button";
 
 export default function Loading() {
-  const setIntroValue = useSetAtom(homeAtom);
+  const setHomeValue = useSetAtom(homeAtom);
 
   const handleClick = () => {
-    setIntroValue({
+    setHomeValue({
       isStarted: true,
     });
   };
@@ -17,10 +17,14 @@ export default function Loading() {
   return (
     <div className="relative z-10 flex items-center justify-center w-full h-full min-h-screen">
       <div className="w-full h-full mx-auto max-w-7xl">
-        <div className="flex flex-col items-center justify-center w-full h-full">
-          <button className={styles.button} onClick={handleClick} type="button">
+        <div className="text-center">
+          <Button
+            variant="ghost"
+            onClick={handleClick}
+            className="relative px-2 text-lg uppercase before:absolute before:left-0 before:bottom-0 before:w-full before:bg-blue-700 before:z-10 before:h-[4px] before:scale-x-0 before:transition-transform hover:before:scale-100 hover:bg-transparent"
+          >
             Start
-          </button>
+          </Button>
         </div>
       </div>
     </div>
