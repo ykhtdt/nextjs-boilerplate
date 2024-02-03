@@ -6,8 +6,6 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 import useWindowSize from "@/hooks/useWindowSize";
 
-import styles from "./scroll-container.module.scss";
-
 export default function ScrollContainer({ children }: { children: ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -31,7 +29,7 @@ export default function ScrollContainer({ children }: { children: ReactNode }) {
   return (
     <Fragment>
       <div style={{ height: contentHeight }} />
-      <motion.div className={styles.wrapper} style={{ y }} ref={containerRef}>
+      <motion.div className="fixed top-0 left-0 w-screen h-full" style={{ y }} ref={containerRef}>
         {children}
       </motion.div>
     </Fragment>

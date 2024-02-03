@@ -26,10 +26,12 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@hookform/resolvers", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:3.3.4"],\
           ["@next/bundle-analyzer", "npm:14.1.0"],\
           ["@radix-ui/react-accordion", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:1.1.2"],\
           ["@radix-ui/react-dropdown-menu", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:2.0.6"],\
           ["@radix-ui/react-icons", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:1.3.0"],\
+          ["@radix-ui/react-label", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:2.0.2"],\
           ["@radix-ui/react-separator", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:1.0.3"],\
           ["@radix-ui/react-slot", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:1.0.2"],\
           ["@storybook/addon-essentials", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:7.5.3"],\
@@ -67,13 +69,15 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.2.4"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:18.2.0"],\
+          ["react-hook-form", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:7.49.3"],\
           ["react-player", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:2.14.1"],\
           ["sass", "npm:1.70.0"],\
           ["storybook", "npm:7.5.3"],\
           ["tailwind-merge", "npm:2.2.1"],\
           ["tailwindcss", "npm:3.4.1"],\
           ["tailwindcss-animate", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:1.0.7"],\
-          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
+          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
+          ["zod", "npm:3.22.4"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -3463,6 +3467,28 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@hookform/resolvers", [\
+      ["npm:3.3.4", {\
+        "packageLocation": "../../../C:/Users/park/AppData/Local/Yarn/Berry/cache/@hookform-resolvers-npm-3.3.4-948251d894-10c0.zip/node_modules/@hookform/resolvers/",\
+        "packageDependencies": [\
+          ["@hookform/resolvers", "npm:3.3.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:3.3.4", {\
+        "packageLocation": "./.yarn/__virtual__/@hookform-resolvers-virtual-a91e877a02/4/C:/Users/park/AppData/Local/Yarn/Berry/cache/@hookform-resolvers-npm-3.3.4-948251d894-10c0.zip/node_modules/@hookform/resolvers/",\
+        "packageDependencies": [\
+          ["@hookform/resolvers", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:3.3.4"],\
+          ["@types/react-hook-form", null],\
+          ["react-hook-form", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:7.49.3"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-hook-form",\
+          "react-hook-form"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@humanwhocodes/config-array", [\
       ["npm:0.11.14", {\
         "packageLocation": "../../../C:/Users/park/AppData/Local/Yarn/Berry/cache/@humanwhocodes-config-array-npm-0.11.14-94a02fcc87-10c0.zip/node_modules/@humanwhocodes/config-array/",\
@@ -4592,6 +4618,34 @@ const RAW_RUNTIME_STATE =
         ],\
         "packagePeers": [\
           "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@radix-ui/react-label", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "../../../C:/Users/park/AppData/Local/Yarn/Berry/cache/@radix-ui-react-label-npm-2.0.2-39662e2444-10c0.zip/node_modules/@radix-ui/react-label/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-label", "npm:2.0.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:2.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-label-virtual-8ba1c60aa5/4/C:/Users/park/AppData/Local/Yarn/Berry/cache/@radix-ui-react-label-npm-2.0.2-39662e2444-10c0.zip/node_modules/@radix-ui/react-label/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-label", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:2.0.2"],\
+          ["@babel/runtime", "npm:7.23.9"],\
+          ["@radix-ui/react-primitive", "virtual:5e54c6bc88294d3547978dba9ea6bef87ac92aac4f4e515d529ee0a3c499774fa2a6fa513c5f9c29d3cbd7a6e02217d499a9f2855b4814ad4acca0cc98516a47#npm:1.0.3"],\
+          ["@types/react", "npm:18.2.48"],\
+          ["@types/react-dom", "npm:18.2.18"],\
+          ["react", "npm:18.2.0"],\
+          ["react-dom", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:18.2.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
           "react"\
         ],\
         "linkType": "HARD"\
@@ -16063,10 +16117,12 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["nextjs-boilerplate", "workspace:."],\
+          ["@hookform/resolvers", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:3.3.4"],\
           ["@next/bundle-analyzer", "npm:14.1.0"],\
           ["@radix-ui/react-accordion", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:1.1.2"],\
           ["@radix-ui/react-dropdown-menu", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:2.0.6"],\
           ["@radix-ui/react-icons", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:1.3.0"],\
+          ["@radix-ui/react-label", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:2.0.2"],\
           ["@radix-ui/react-separator", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:1.0.3"],\
           ["@radix-ui/react-slot", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:1.0.2"],\
           ["@storybook/addon-essentials", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:7.5.3"],\
@@ -16104,13 +16160,15 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.2.4"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:18.2.0"],\
+          ["react-hook-form", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:7.49.3"],\
           ["react-player", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:2.14.1"],\
           ["sass", "npm:1.70.0"],\
           ["storybook", "npm:7.5.3"],\
           ["tailwind-merge", "npm:2.2.1"],\
           ["tailwindcss", "npm:3.4.1"],\
           ["tailwindcss-animate", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:1.0.7"],\
-          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
+          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
+          ["zod", "npm:3.22.4"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -17841,6 +17899,28 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../C:/Users/park/AppData/Local/Yarn/Berry/cache/react-fast-compare-npm-3.2.2-45b585a872-10c0.zip/node_modules/react-fast-compare/",\
         "packageDependencies": [\
           ["react-fast-compare", "npm:3.2.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["react-hook-form", [\
+      ["npm:7.49.3", {\
+        "packageLocation": "../../../C:/Users/park/AppData/Local/Yarn/Berry/cache/react-hook-form-npm-7.49.3-8e426579b7-10c0.zip/node_modules/react-hook-form/",\
+        "packageDependencies": [\
+          ["react-hook-form", "npm:7.49.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:7.49.3", {\
+        "packageLocation": "./.yarn/__virtual__/react-hook-form-virtual-bcc8b4a253/4/C:/Users/park/AppData/Local/Yarn/Berry/cache/react-hook-form-npm-7.49.3-8e426579b7-10c0.zip/node_modules/react-hook-form/",\
+        "packageDependencies": [\
+          ["react-hook-form", "virtual:ed9d19152b84e8967ae21e6b8e08052d1898ac03af617209a960b0873011434617cadfaa6f33056b10fd3f03178209d0e7af27e3694bb550237ca74866ec1ef2#npm:7.49.3"],\
+          ["@types/react", "npm:18.2.48"],\
+          ["react", "npm:18.2.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -21168,6 +21248,15 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }]\
+    ]],\
+    ["zod", [\
+      ["npm:3.22.4", {\
+        "packageLocation": "../../../C:/Users/park/AppData/Local/Yarn/Berry/cache/zod-npm-3.22.4-2bccbc41b4-10c0.zip/node_modules/zod/",\
+        "packageDependencies": [\
+          ["zod", "npm:3.22.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
     ]]\
   ]\
 }';
@@ -21563,10 +21652,9 @@ async function copyImpl(prelayout, postlayout, destinationFs, destination, sourc
         updated = await copySymlink(prelayout, postlayout, destinationFs, destination, destinationStat, sourceFs, source, sourceStat, opts);
       }
       break;
-    default:
-      {
-        throw new Error(`Unsupported file type (${sourceStat.mode})`);
-      }
+    default: {
+      throw new Error(`Unsupported file type (${sourceStat.mode})`);
+    }
   }
   if (opts.linkStrategy?.type !== `HardlinkFromIndex` || !sourceStat.isFile()) {
     if (updated || destinationStat?.mtime?.getTime() !== mtime.getTime() || destinationStat?.atime?.getTime() !== atime.getTime()) {
@@ -21629,7 +21717,10 @@ async function copyFolder(prelayout, postlayout, destinationFs, destination, des
 }
 async function copyFileViaIndex(prelayout, postlayout, destinationFs, destination, destinationStat, sourceFs, source, sourceStat, opts, linkStrategy) {
   const sourceHash = await sourceFs.checksumFilePromise(source, { algorithm: `sha1` });
-  const indexPath = destinationFs.pathUtils.join(linkStrategy.indexPath, sourceHash.slice(0, 2), `${sourceHash}.dat`);
+  const defaultMode = 420;
+  const sourceMode = sourceStat.mode & 511;
+  const indexFileName = `${sourceHash}${sourceMode !== defaultMode ? sourceMode.toString(8) : ``}`;
+  const indexPath = destinationFs.pathUtils.join(linkStrategy.indexPath, sourceHash.slice(0, 2), `${indexFileName}.dat`);
   let AtomicBehavior;
   ((AtomicBehavior2) => {
     AtomicBehavior2[AtomicBehavior2["Lock"] = 0] = "Lock";
@@ -21685,8 +21776,12 @@ async function copyFileViaIndex(prelayout, postlayout, destinationFs, destinatio
     }
   });
   postlayout.push(async () => {
-    if (!indexStat)
+    if (!indexStat) {
       await destinationFs.lutimesPromise(indexPath, defaultTime, defaultTime);
+      if (sourceMode !== defaultMode) {
+        await destinationFs.chmodPromise(indexPath, sourceMode);
+      }
+    }
     if (tempPath && !tempPathCleaned) {
       await destinationFs.unlinkPromise(tempPath);
     }
@@ -23890,6 +23985,8 @@ class VirtualFS extends ProxiedFS {
   }
 }
 
+const URL = Number(process.versions.node.split('.', 1)[0]) < 20 ? url.URL : globalThis.URL;
+
 class NodePathFS extends ProxiedFS {
   constructor(baseFs) {
     super(npath);
@@ -23901,7 +23998,7 @@ class NodePathFS extends ProxiedFS {
   mapToBase(path) {
     if (typeof path === `string`)
       return path;
-    if (path instanceof url.URL)
+    if (path instanceof URL)
       return url.fileURLToPath(path);
     if (Buffer.isBuffer(path)) {
       const str = path.toString();
@@ -25467,8 +25564,10 @@ class ZipFS extends BasePortableFakeFS {
           throw new Error(`Incomplete read`);
         else if (rc > size)
           throw new Error(`Overread`);
-        const memory = this.libzip.HEAPU8.subarray(buffer, buffer + size);
-        return Buffer.from(memory);
+        let result = Buffer.from(this.libzip.HEAPU8.subarray(buffer, buffer + size));
+        if (process.env.YARN_IS_TEST_ENV && process.env.YARN_ZIP_DATA_EPILOGUE)
+          result = Buffer.concat([result, Buffer.from(process.env.YARN_ZIP_DATA_EPILOGUE)]);
+        return result;
       } finally {
         this.libzip.free(buffer);
       }
@@ -26526,7 +26625,7 @@ function applyPatch(pnpapi, opts) {
   process.versions.pnp = String(pnpapi.VERSIONS.std);
   const moduleExports = require$$0__default.default;
   moduleExports.findPnpApi = (lookupSource) => {
-    const lookupPath = lookupSource instanceof url.URL ? url.fileURLToPath(lookupSource) : lookupSource;
+    const lookupPath = lookupSource instanceof URL ? url.fileURLToPath(lookupSource) : lookupSource;
     const apiPath = opts.manager.findApiPathFor(lookupPath);
     if (apiPath === null)
       return null;
@@ -26948,28 +27047,6 @@ function getPackageScopeConfig(resolved, readFileSyncFn) {
   return packageConfig;
 }
 
-/**
-  @license
-  Copyright Node.js contributors. All rights reserved.
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
-*/
 function throwImportNotDefined(specifier, packageJSONUrl, base) {
   throw new ERR_PACKAGE_IMPORT_NOT_DEFINED(
     specifier,
