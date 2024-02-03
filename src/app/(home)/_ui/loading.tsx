@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export default function Loading() {
   const setHomeValue = useSetAtom(homeAtom);
 
-  const handleClick = () => {
+  const handleStartClick = () => {
     setHomeValue({
       isStarted: true,
     });
@@ -20,7 +20,7 @@ export default function Loading() {
         <div className="text-center">
           <Button
             variant="ghost"
-            onClick={handleClick}
+            onClick={handleStartClick}
             className="relative px-2 text-lg uppercase before:absolute before:left-0 before:bottom-0 before:w-full before:bg-blue-700 before:z-10 before:h-[4px] before:scale-x-0 before:transition-transform hover:before:scale-100 hover:bg-transparent"
           >
             Start
