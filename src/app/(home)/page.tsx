@@ -10,7 +10,7 @@ export default function HomePage() {
       <main id="content">
         <IntroSection />
         <FeatureSection />
-        <StartSection />
+        {/* <StartSection />  */}
       </main>
     </ScrollContainer>
   );
