@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 
-interface Props {
+type Props = {
   display: string;
   children: React.ReactNode;
 }
