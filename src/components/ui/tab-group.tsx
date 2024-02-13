@@ -5,14 +5,14 @@ import { useSelectedLayoutSegment } from "next/navigation";
 
 import clsx from "clsx";
 
-export interface Item {
+export type Item = {
   key: string;
   name: string;
   slug?: string;
   segment?: string;
 }
 
-export interface TabGroupProps {
+export type TabGroupProps = {
   path: string;
   items: Item[];
 }
@@ -27,7 +27,7 @@ export function TabGroup({ path, items }: TabGroupProps) {
   );
 }
 
-export interface TabProps {
+export type TabProps = {
   path: string;
   item: Item;
 }
