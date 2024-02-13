@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 type Props = {
   display: string;
   children: React.ReactNode;
-}
+};
 
 export function BadgeLayout({ display, children }: Props) {
   return (

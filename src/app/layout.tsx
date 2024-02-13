@@ -23,7 +23,7 @@ const getTheme = () => {
   const theme = themeCookie ? themeCookie.value : "dark";
 
   return theme;
-}
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const theme = getTheme();

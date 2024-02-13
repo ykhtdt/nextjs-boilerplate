@@ -10,12 +10,12 @@ export type Item = {
   name: string;
   slug?: string;
   segment?: string;
-}
+};
 
 export type TabGroupProps = {
   path: string;
   items: Item[];
-}
+};
 
 export function TabGroup({ path, items }: TabGroupProps) {
   return (
@@ -30,7 +30,7 @@ export function TabGroup({ path, items }: TabGroupProps) {
 export type TabProps = {
   path: string;
   item: Item;
-}
+};
 
 export function Tab({ path, item }: TabProps) {
   const segment = useSelectedLayoutSegment();
