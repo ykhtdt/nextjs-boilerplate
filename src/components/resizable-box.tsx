@@ -2,11 +2,8 @@
 
 import { PropsWithChildren, useCallback, useLayoutEffect, useRef, useState } from "react";
 
-import clsx from "clsx";
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
-
-import { Button } from "@/components/ui/button";
 
 type ResizeHandleAxis = "n" | "ne" | "e" | "se" | "s" | "sw" | "w" | "nw";
 
@@ -91,18 +88,64 @@ export default function ResizableBox({
   }
 
   const generateResizeHandle = useCallback((axis: ResizeHandleAxis) => {
+    const calculateWidth = (width: number, deltaX: number) => {
+      if (axis.includes("e")) {
+        return inRange(width + deltaX, minConstraints[0], maxConstraints[0]);
+      }
+
+      if (axis.includes("w")) {
+        return inRange(width - deltaX, minConstraints[0], maxConstraints[0]);
+      }
+
+      return width;
+    };
+
+    const calculateHeight = (height: number, deltaY: number) => {
+      if (axis.includes("n")) {
+        return inRange(height - deltaY, minConstraints[1], maxConstraints[1]);
+      }
+
+      if (axis.includes("s")) {
+        return inRange(height + deltaY, minConstraints[1], maxConstraints[1]);
+      }
+
+      return height;
+    };
+
+    const calculateTop = (bounds: Bounds, deltaY: number) => {
+      if (bounds.top !== undefined && bounds.height !== undefined) {
+        if (axis.includes("n")) {
+          return inRange(bounds.top + deltaY, bounds.height + bounds.top - maxConstraints[1], bounds.top + bounds.height - minConstraints[1]);
+        }
+      }
+
+      return bounds.top;
+    }
+
+    const calculateLeft = (bounds: Bounds, deltaX: number) => {
+      if (bounds.left !== undefined && bounds.width !== undefined) {
+        if (axis.includes("w")) {
+          return inRange(bounds.left + deltaX, bounds.width + bounds.left - maxConstraints[0], bounds.left + bounds.width - minConstraints[0]);
+        }
+      }
+
+      return bounds.left;
+    }
+
     const params = {
       ...resizeRegister((deltaX, deltaY) => {
-        if (bounds.top !== undefined && bounds.left !== undefined && bounds.width !== undefined && bounds.height !== undefined) {
-          const nextBounds = {
-            top: axis.includes("n") ? inRange(bounds.top + deltaY, bounds.height + bounds.top - maxConstraints[1], bounds.top + bounds.height - minConstraints[1]) : bounds.top,
-            left: axis.includes("w") ? inRange(bounds.left + deltaX, bounds.width + bounds.left - maxConstraints[0], bounds.left + bounds.width - minConstraints[0]) : bounds.left,
-            width: axis.includes("e") ? inRange(bounds.width + deltaX, minConstraints[0], maxConstraints[0]) : axis.includes("w") ? inRange(bounds.width - deltaX, minConstraints[0], maxConstraints[0]) : bounds.width,
-            height: axis.includes("n") ? inRange(bounds.height - deltaY, minConstraints[1], maxConstraints[1]) : axis.includes("s") ? inRange(bounds.height + deltaY, minConstraints[1], maxConstraints[1]) : bounds.height,
-          }
-
-          setBounds({ ...nextBounds });
+        if (bounds.top === undefined || bounds.left === undefined || bounds.width === undefined || bounds.height === undefined) {
+          return;
         }
+
+        const nextBounds = {
+          top: calculateTop(bounds, deltaY),
+          left: calculateLeft(bounds, deltaX),
+          width: calculateWidth(bounds.width, deltaX),
+          height: calculateHeight(bounds.height, deltaY),
+        };
+
+        setBounds({ ...nextBounds });
       })
     };
 
@@ -125,7 +168,7 @@ export default function ResizableBox({
   }, [bounds, maxConstraints, minConstraints]);
 
   return (
-    <div ref={boundaryRef} style={{ ...bounds }} className={clsx(className, "relative")}>
+    <div ref={boundaryRef} style={{ ...bounds }} className={cn(className, "relative")}>
       {children}
       {resizeHandleAxis && resizeHandleAxis.map((axis) => generateResizeHandle(axis))}
     </div>
