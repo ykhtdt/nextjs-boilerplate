@@ -132,7 +132,7 @@ export default function ResizableBox({
       {children}
       <span {...resizeRegister((deltaX, deltaY) => {
         if (bounds.top !== undefined && bounds.left !== undefined && bounds.width !== undefined && bounds.height !== undefined) {
-          if (bounds.width - deltaX >= maxConstraints[0]) {
+          if (bounds.width + deltaX >= maxConstraints[0]) {
             return;
           }
 
