@@ -93,19 +93,16 @@ export default function ResizableBox({
   const generateResizeHandle = useCallback((axis: ResizeHandleAxis) => {
     const params = {
       ...resizeRegister((deltaX, deltaY) => {
-        if (!boundaryRef.current) {
-          return;
-        }
-
-        const boundary = boundaryRef.current.getBoundingClientRect();
-
         if (bounds.top !== undefined && bounds.left !== undefined && bounds.width !== undefined && bounds.height !== undefined) {
-          setBounds({
-            ...bounds,
-            height: inRange(bounds.height - deltaY, minConstraints[1], maxConstraints[1]),
-          });
-        }
+          const nextBounds = {
+            top: axis.includes("n") ? inRange(bounds.top + deltaY, bounds.height + bounds.top - maxConstraints[1], bounds.top + bounds.height - minConstraints[1]) : bounds.top,
+            left: axis.includes("w") ? inRange(bounds.left + deltaX, bounds.width + bounds.left - maxConstraints[0], bounds.left + bounds.width - minConstraints[0]) : bounds.left,
+            width: axis.includes("e") ? inRange(bounds.width + deltaX, minConstraints[0], maxConstraints[0]) : axis.includes("w") ? inRange(bounds.width - deltaX, minConstraints[0], maxConstraints[0]) : bounds.width,
+            height: axis.includes("n") ? inRange(bounds.height - deltaY, minConstraints[1], maxConstraints[1]) : axis.includes("s") ? inRange(bounds.height + deltaY, minConstraints[1], maxConstraints[1]) : bounds.height,
+          }
 
+          setBounds({ ...nextBounds });
+        }
       })
     };
 
@@ -124,113 +121,13 @@ export default function ResizableBox({
       }
     })
 
-    return <span {...params} className={cn(resizeHandleVariants({ axis }))} />
+    return <span key={axis} {...params} className={cn(resizeHandleVariants({ axis }))} />
   }, [bounds, maxConstraints, minConstraints]);
 
   return (
     <div ref={boundaryRef} style={{ ...bounds }} className={clsx(className, "relative")}>
       {children}
-      <span {...resizeRegister((deltaX, deltaY) => {
-        if (bounds.top !== undefined && bounds.left !== undefined && bounds.width !== undefined && bounds.height !== undefined) {
-          if (bounds.width + deltaX >= maxConstraints[0]) {
-            return;
-          }
-
-          if (bounds.height - deltaY >= maxConstraints[1]) {
-            return;
-          }
-
-          setBounds({
-            ...bounds,
-            top: inRange(bounds.top + deltaY, 0, bounds.top + bounds.height - minConstraints[1]),
-            width: inRange(bounds.width + deltaX, minConstraints[0], maxConstraints[0]),
-            height: inRange(bounds.height - deltaY, minConstraints[1], maxConstraints[1])
-          });
-        }
-      })} className="absolute top-0 right-0 translate-x-[50%] translate-y-[-50%] w-4 h-4 cursor-ne-resize" />
-      <span {...resizeRegister((deltaX, _deltaY) => {
-        if (bounds.top !== undefined && bounds.left !== undefined && bounds.width !== undefined && bounds.height !== undefined) {
-          setBounds({
-            ...bounds,
-            width: inRange(bounds.width + deltaX, minConstraints[0], maxConstraints[0]),
-          });
-        }
-      })} className="absolute top-0 right-0 translate-x-[50%] w-3 h-full cursor-e-resize" />
-      <span {...resizeRegister((deltaX, deltaY) => {
-        if (bounds.top !== undefined && bounds.left !== undefined && bounds.width !== undefined && bounds.height !== undefined) {
-          setBounds({
-            ...bounds,
-            width: inRange(bounds.width + deltaX, minConstraints[0], maxConstraints[0]),
-            height: inRange(bounds.height + deltaY, minConstraints[1], maxConstraints[1]),
-          });
-        }
-      })} className="absolute bottom-0 right-0 translate-x-[50%] translate-y-[50%] w-4 h-4 cursor-se-resize" />
-      <span {...resizeRegister((_deltaX, deltaY) => {
-        if (bounds.top !== undefined && bounds.left !== undefined && bounds.width !== undefined && bounds.height !== undefined) {
-          setBounds({
-            ...bounds,
-            height: inRange(bounds.height + deltaY, minConstraints[1], maxConstraints[1]),
-          });
-        }
-      })} className="absolute bottom-0 left-0 translate-y-[50%] w-full h-3 cursor-s-resize" />
-      <span {...resizeRegister((deltaX, deltaY) => {
-        if (bounds.top !== undefined && bounds.left !== undefined && bounds.width !== undefined && bounds.height !== undefined) {
-          if (bounds.width - deltaX >= maxConstraints[0]) {
-            return;
-          }
-
-          setBounds({
-            ...bounds,
-            left: inRange(bounds.left + deltaX, 0, bounds.left + bounds.width - minConstraints[0]),
-            width: inRange(bounds.width - deltaX, minConstraints[0], maxConstraints[0]),
-            height: inRange(bounds.height + deltaY, minConstraints[1], maxConstraints[1]),
-          });
-        }
-      })} className="absolute bottom-0 left-0 translate-x-[-50%] translate-y-[50%] w-4 h-4 cursor-sw-resize" />
-      <span {...resizeRegister((deltaX, deltaY) => {
-        if (bounds.top !== undefined && bounds.left !== undefined && bounds.width !== undefined && bounds.height !== undefined) {
-          if (bounds.width - deltaX >= maxConstraints[0]) {
-            return;
-          }
-
-          setBounds({
-            ...bounds,
-            left: inRange(bounds.left + deltaX, 0, bounds.left + bounds.width - minConstraints[0]),
-            width: inRange(bounds.width - deltaX, minConstraints[0], maxConstraints[0]),
-          });
-        }
-      })} className="absolute bottom-0 left-0 translate-x-[-50%] w-3 h-full cursor-w-resize" />
-      <span {...resizeRegister((deltaX, deltaY) => {
-        if (bounds.top !== undefined && bounds.left !== undefined && bounds.width !== undefined && bounds.height !== undefined) {
-          if (bounds.width - deltaX >= maxConstraints[0]) {
-            return;
-          }
-
-          if (bounds.height - deltaY >= maxConstraints[1]) {
-            return;
-          }
-
-          setBounds({
-            top: inRange(bounds.top + deltaY, 0, bounds.top + bounds.height - minConstraints[1]),
-            left: inRange(bounds.left + deltaX, 0, bounds.left + bounds.width - minConstraints[0]),
-            width: inRange(bounds.width - deltaX, minConstraints[0], maxConstraints[0]),
-            height: inRange(bounds.height - deltaY, minConstraints[1], maxConstraints[1]),
-          });
-        }
-      })} className="absolute top-0 left-0 translate-x-[-50%] translate-y-[-50%] w-4 h-4 cursor-nw-resize" />
-      <span {...resizeRegister((_deltaX, deltaY) => {
-        if (bounds.top !== undefined && bounds.left !== undefined && bounds.width !== undefined && bounds.height !== undefined) {
-          if (bounds.height - deltaY >= maxConstraints[1]) {
-            return;
-          }
-
-          setBounds({
-            ...bounds,
-            top: inRange(bounds.top + deltaY, 0, bounds.top + bounds.height - minConstraints[1]),
-            height: inRange(bounds.height - deltaY, minConstraints[1], maxConstraints[1])
-          });
-        }
-      })} className="absolute top-0 left-0 translate-y-[-50%] w-full h-4 cursor-n-resize" />
+      {resizeHandleAxis && resizeHandleAxis.map((axis) => generateResizeHandle(axis))}
     </div>
   );
 }
