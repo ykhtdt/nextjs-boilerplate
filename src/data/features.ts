@@ -19,7 +19,7 @@ const features: Feature[] = [
     description: "A utility-first CSS framework for rapid UI development.",
   },
   {
-    key: "ESLint & Prettier",
+    key: "ESLint",
     imgSrc: "/intro/eslint.svg",
     imgAlt: "ESLint icon",
     description: "For clean and consistent code.",

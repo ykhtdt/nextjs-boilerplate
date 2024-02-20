@@ -1,9 +1,5 @@
 module.exports = {
-  extends: ["next", "prettier", "plugin:storybook/recommended"],
-  plugins: ["@typescript-eslint"],
-  rules: {
-    "prefer-const": "error",
-    "react-hooks/exhaustive-deps": "error",
-    "react/no-unescaped-entities": 0,
-  },
-};
+    extends: ["@ykhtdt/eslint-config", "plugin:storybook/recommended"],
+    plugins: ["eslint-plugin-prettier"],
+  };
+  
