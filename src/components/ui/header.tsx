@@ -12,7 +12,10 @@ export default function Header() {
             <span className="hidden font-bold sm:inline-block">Ykhtdt</span>
           </Link>
           <nav className="flex items-center gap-6 text-sm">
-            <Link href="/docs" className="transition-colors hover:text-foreground text-foreground/60">
+            <Link
+              href="/docs"
+              className="transition-colors hover:text-foreground text-foreground/60"
+            >
               Docs
             </Link>
           </nav>

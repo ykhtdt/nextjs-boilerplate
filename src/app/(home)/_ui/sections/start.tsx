@@ -31,12 +31,19 @@ export default function StartSection() {
             animate={isInViewSection ? "visible" : "hidden"}
             transition={{ delayChildren: 0.1 }}
           >
-            <motion.div className="flex flex-col items-center w-full" variants={fadeInAnimation} transition={{ duration: 2 }}>
+            <motion.div
+              className="flex flex-col items-center w-full"
+              variants={fadeInAnimation}
+              transition={{ duration: 2 }}
+            >
               <Button
                 variant="outline"
                 className="h-auto p-0 text-base font-medium uppercase transition-colors border border-blue-600 rounded-lg hover:bg-inherit hover:border-blue-600/80"
               >
-                <Link href="/docs" className="flex h-12 px-12 py-3 [&>svg]:hover:animate-wobble ">
+                <Link
+                  href="/docs"
+                  className="flex h-12 px-12 py-3 [&>svg]:hover:animate-wobble "
+                >
                   <span className="mr-3">Learn more</span>
                   <MoveRight />
                 </Link>

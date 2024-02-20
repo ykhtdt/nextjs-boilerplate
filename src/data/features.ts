@@ -10,7 +10,8 @@ const features: Feature[] = [
     key: "Next.js",
     imgSrc: "/intro/nextjs.svg",
     imgAlt: "Next.js icon",
-    description: "Offers improved developer experience for building applications.",
+    description:
+      "Offers improved developer experience for building applications.",
   },
   {
     key: "Tailwind",
@@ -46,7 +47,8 @@ const features: Feature[] = [
     key: "Jotai",
     imgSrc: "/intro/jotai.svg",
     imgAlt: "Jotai icon",
-    description: "For flexible and scalable atom-based approach state management.",
+    description:
+      "For flexible and scalable atom-based approach state management.",
   },
   {
     key: "Jest & React Testing Library",

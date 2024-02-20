@@ -42,10 +42,13 @@ export function Tab({ path, item }: TabProps) {
   return (
     <Link
       href={href}
-      className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
-        ["bg-zinc-700 hover:bg-zinc-500"]: !isActive,
-        ["bg-teal-700"]: isActive,
-      })}
+      className={clsx(
+        "transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light",
+        {
+          ["bg-zinc-700 hover:bg-zinc-500"]: !isActive,
+          ["bg-teal-700"]: isActive,
+        },
+      )}
     >
       {item.name}
     </Link>

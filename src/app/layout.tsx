@@ -25,13 +25,22 @@ const getTheme = () => {
   return theme;
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const theme = getTheme();
 
   return (
     <html lang="en" className={theme} style={{ colorScheme: theme }}>
       <body className={montserrat.variable} id="body">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
           <CustomProvider>{children}</CustomProvider>
         </ThemeProvider>
       </body>
