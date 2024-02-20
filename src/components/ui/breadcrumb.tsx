@@ -24,10 +24,13 @@ export default function Breadcrumb() {
                 <span>
                   <span
                     key={segment}
-                    className={clsx("overflow-hidden text-ellipsis whitespace-nowrap capitalize", {
-                      ["text-muted-foreground"]: !isLast,
-                      ["font-medium"]: isLast,
-                    })}
+                    className={clsx(
+                      "overflow-hidden text-ellipsis whitespace-nowrap capitalize",
+                      {
+                        ["text-muted-foreground"]: !isLast,
+                        ["font-medium"]: isLast,
+                      },
+                    )}
                   >
                     {segment.replace("-", " ")}
                   </span>

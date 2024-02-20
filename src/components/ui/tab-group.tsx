@@ -10,12 +10,12 @@ export type Item = {
   name: string;
   slug?: string;
   segment?: string;
-}
+};
 
 export type TabGroupProps = {
   path: string;
   items: Item[];
-}
+};
 
 export function TabGroup({ path, items }: TabGroupProps) {
   return (
@@ -30,7 +30,7 @@ export function TabGroup({ path, items }: TabGroupProps) {
 export type TabProps = {
   path: string;
   item: Item;
-}
+};
 
 export function Tab({ path, item }: TabProps) {
   const segment = useSelectedLayoutSegment();
@@ -42,10 +42,13 @@ export function Tab({ path, item }: TabProps) {
   return (
     <Link
       href={href}
-      className={clsx("transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light", {
-        ["bg-zinc-700 hover:bg-zinc-500"]: !isActive,
-        ["bg-teal-700"]: isActive,
-      })}
+      className={clsx(
+        "transition-colors px-3 py-0.5 text-sm capitalize rounded-lg font-light",
+        {
+          ["bg-zinc-700 hover:bg-zinc-500"]: !isActive,
+          ["bg-teal-700"]: isActive,
+        },
+      )}
     >
       {item.name}
     </Link>

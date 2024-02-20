@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 
 export default function Background() {
-
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -20,7 +19,10 @@ export default function Background() {
               muted
               loop
               playsInline
-              style={{ backgroundImage: "url(/intro/space.png)", backgroundPosition: "50%" }}
+              style={{
+                backgroundImage: "url(/intro/space.png)",
+                backgroundPosition: "50%",
+              }}
             >
               <source src="/intro/space.webp" />
               <source src="/intro/space.mp4" />
@@ -34,7 +36,10 @@ export default function Background() {
   return (
     <div
       className="absolute inset-0 w-screen min-h-screen h-screen-dvh"
-      style={{ backgroundImage: "url(/intro/space.png)", backgroundPosition: "50%" }}
+      style={{
+        backgroundImage: "url(/intro/space.png)",
+        backgroundPosition: "50%",
+      }}
     />
   );
 }

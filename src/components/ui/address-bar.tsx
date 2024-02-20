@@ -8,7 +8,9 @@ import { Lock } from "lucide-react";
 export function AddressBar() {
   const segments = useSelectedLayoutSegments();
 
-  const segmentsWithoutRouteGroup = segments.filter((segment) => !segment.includes("("));
+  const segmentsWithoutRouteGroup = segments.filter(
+    (segment) => !segment.includes("("),
+  );
 
   return (
     <div className="flex items-center gap-4 px-2 py-2 text-sm">

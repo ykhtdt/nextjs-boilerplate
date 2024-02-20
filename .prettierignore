@@ -1,7 +1,0 @@
-.next
-/node_modules/
-
-.pnp.*
-.yarn/*
-.vscode
-.yarnrc.yml

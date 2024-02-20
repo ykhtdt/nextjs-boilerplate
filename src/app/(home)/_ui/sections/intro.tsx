@@ -18,7 +18,7 @@ export default function IntroSection() {
         opacity: 1,
       },
     }),
-    []
+    [],
   );
 
   const [step, setStep] = useState(0);
@@ -54,10 +54,14 @@ export default function IntroSection() {
               char === " " ? (
                 <Fragment key={`${char}_${i}`}>&nbsp;</Fragment>
               ) : (
-                <motion.span className="inline-block" key={`${char}_${i}`} variants={fadeInAnimation}>
+                <motion.span
+                  className="inline-block"
+                  key={`${char}_${i}`}
+                  variants={fadeInAnimation}
+                >
                   {char}
                 </motion.span>
-              )
+              ),
             )}
           </motion.div>
           <motion.div
@@ -66,7 +70,10 @@ export default function IntroSection() {
             animate={step >= 1 ? "visible" : "hidden"}
             onAnimationComplete={handleAnimationStep}
           >
-            <motion.p variants={fadeInAnimation}>Start front-end development with feature-packed, Next.js boilerplate.</motion.p>
+            <motion.p variants={fadeInAnimation}>
+              Start front-end development with feature-packed, Next.js
+              boilerplate.
+            </motion.p>
           </motion.div>
           <motion.div
             className="absolute bottom-24"
