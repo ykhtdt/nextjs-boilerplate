@@ -1,5 +1,8 @@
 {
   "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
   "css.customData": [".vscode/css_custom.json"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "tailwindCSS.experimental.classRegex": [
