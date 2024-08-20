@@ -2,6 +2,9 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 
 import { ThemeProvider } from "@/components/provider/theme-provider"
+import { TanstackQueryProvider } from "@/components/provider/tanstack-provider"
+
+import { Toaster } from "@/components/ui/toaster"
 
 import "./globals.css"
 
@@ -20,14 +23,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <TanstackQueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster />
+          </ThemeProvider>
+        </TanstackQueryProvider>
       </body>
     </html>
   )
