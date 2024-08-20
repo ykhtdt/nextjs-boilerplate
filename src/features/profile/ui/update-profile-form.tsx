@@ -34,7 +34,7 @@ const formSchema = z.object({
   tel: z.string().min(11, "전화번호 형식이 올바르지 않습니다.").max(13, "전화번호 형식이 올바르지 않습니다."),
 })
 
-export const ProfileForm = ({
+export const UpdateProfileForm = ({
   profile,
 }: ProfileFormProps) => {
   const { toast } = useToast()
