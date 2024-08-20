@@ -1,9 +1,10 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:storybook/recommended"
-  ],
+  "extends": "next/core-web-vitals",
   "rules": {
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
     "indent": [
       "error",
       2
@@ -14,6 +15,12 @@
     "semi": [
       "error",
       "never"
-    ]
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "react/no-children-prop": "off",
+    "react/no-unescaped-entities": "off"
   }
 }
