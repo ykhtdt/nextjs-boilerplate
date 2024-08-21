@@ -9,7 +9,7 @@ type PutProfilesValues = {
 } & InputProfilesValues;
 
 export const apiPutProfiles = async (values: PutProfilesValues) => {
-  const response = await api<UserDto>("api/account/profiles", {
+  const response = await api<User>("api/account/profiles", {
     method: "PUT",
     body: {
       ...values 
