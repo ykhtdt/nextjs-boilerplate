@@ -1,4 +1,4 @@
-import type { UserDto } from "@/model/userDto"
+import type { User } from "./types"
 
 import { api } from "../base"
 
