@@ -8,8 +8,10 @@ type PutProfilesValues = {
   id: UserDto["id"];
 } & InputProfilesValues;
 
+type PutProfilesResponse = User;
+
 export const apiPutProfiles = async (values: PutProfilesValues) => {
-  const response = await api<User>("api/account/profiles", {
+  const response = await api<PutProfilesResponse>("api/account/profiles", {
     method: "PUT",
     body: {
       ...values 
