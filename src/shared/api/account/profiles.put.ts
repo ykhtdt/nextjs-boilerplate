@@ -1,13 +1,15 @@
-import type { User } from "./types"
+import type { UserDto } from "@/model/userDto"
 
 import { api } from "../base"
 
-type ProfileValues = {
-  id: User["id"];
-} & Partial<Omit<User, "id">>;
+type InputProfilesValues = Partial<Omit<UserDto, "id">>;
 
-export const apiPutProfiles = async (values: ProfileValues) => {
-  const response = await api<User>("api/account/profiles", {
+type PutProfilesValues = {
+  id: UserDto["id"];
+} & InputProfilesValues;
+
+export const apiPutProfiles = async (values: PutProfilesValues) => {
+  const response = await api<UserDto>("api/account/profiles", {
     method: "PUT",
     body: {
       ...values 
