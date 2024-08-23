@@ -24,20 +24,14 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 
-import { ResetPasswordDialog } from "./reset-password-dialog"
+import {
+  updateProfileSchema,
+  ResetPasswordDialog,
+} from "@/features/profile"
 
 type ProfileFormProps = {
   profile: User;
 }
-
-const formSchema = z.object({
-  email: z.string().optional(),
-  name: z.string().min(1, "이름을 입력해주세요."),
-  tel: z.string().regex(/^[0-9\-]*$/).min(11, "전화번호 형식이 올바르지 않습니다.").max(13, "전화번호 형식이 올바르지 않습니다."),
-  deptName: z.string().optional(),
-  position: z.string().optional(),
-  role: z.string().optional(),
-})
 
 export const UpdateProfileForm = ({
   profile,
@@ -46,8 +40,8 @@ export const UpdateProfileForm = ({
 
   const [isPasswordResetDialogOpen, toggleIsPasswordResetDialogOpen] = useReducer((state) => !state, false)
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof updateProfileSchema>>({
+    resolver: zodResolver(updateProfileSchema),
     defaultValues: {
       email: profile.email,
       name: profile.name,
@@ -56,7 +50,7 @@ export const UpdateProfileForm = ({
   })
 
   const mutation = useMutation({
-    mutationFn: async (values: z.infer<typeof formSchema>) => {
+    mutationFn: async (values: z.infer<typeof updateProfileSchema>) => {
       const nextValues = {
         id: profile.id,
         name: values.name,
@@ -79,7 +73,7 @@ export const UpdateProfileForm = ({
     }
   })
 
-  const handleSubmit = async (values: z.infer<typeof formSchema>) => {
+  const handleSubmit = async (values: z.infer<typeof updateProfileSchema>) => {
     await mutation.mutateAsync(values)
   }
 
