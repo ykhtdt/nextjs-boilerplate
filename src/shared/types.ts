@@ -1,4 +1,4 @@
-import type { UnionToIntersection } from "@/(shared)/lib/utility-types"
+import type { UnionToIntersection } from "@/shared/lib/utility-types"
 
 type BaseProps = {
   children: React.ReactNode;
