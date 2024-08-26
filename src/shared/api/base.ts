@@ -36,7 +36,7 @@ interface ApiRequestOptions {
   headers?: Record<string, string>;
   searchParams?: Record<string, string | number>;
   body?: Record<string, any>;
-  responseType?: "json" | "blob";
+  responseType?: "JSON" | "BLOB";
 }
 
 export const api = async <T>(
@@ -46,7 +46,7 @@ export const api = async <T>(
     headers,
     searchParams,
     body,
-    responseType = "json",
+    responseType = "JSON",
   }: ApiRequestOptions = {}
 ): Promise<T> => {
   try {
@@ -60,7 +60,7 @@ export const api = async <T>(
       json: body,
     })
 
-    if (responseType === "blob") {
+    if (responseType === "BLOB") {
       return await response.blob() as T
     }
 
