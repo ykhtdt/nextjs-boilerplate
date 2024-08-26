@@ -1,21 +1,21 @@
-"use server"
-
 import ky from "ky"
+
+import { getSession } from "./session"
 
 interface ErrorData {
   message: string;
 }
 
 const baseApi = ky.create({
-  prefixUrl: process.env.NEXT_PUBLIC_API_URL as string,
+  prefixUrl: process.env.NEXT_PUBLIC_BASE_URL as string,
   timeout: 10000,
   hooks: {
     beforeRequest: [
       async (request) => {
-        // const token = await getToken()
-        // if (token) {
-        //   request.headers.set("Authorization", `Bearer ${token}`)
-        // }
+        const session = await getSession()
+        if (session) {
+          request.headers.set("Authorization", `Bearer ${session.token}`)
+        }
       }
     ],
     afterResponse: [
@@ -36,6 +36,7 @@ interface ApiRequestOptions {
   headers?: Record<string, string>;
   searchParams?: Record<string, string | number>;
   body?: Record<string, any>;
+  responseType?: "json" | "blob";
 }
 
 export const api = async <T>(
@@ -44,7 +45,8 @@ export const api = async <T>(
     method = "GET",
     headers,
     searchParams,
-    body
+    body,
+    responseType = "json",
   }: ApiRequestOptions = {}
 ): Promise<T> => {
   try {
@@ -56,9 +58,13 @@ export const api = async <T>(
       },
       searchParams,
       json: body,
-    }).json<T>()
+    })
 
-    return response
+    if (responseType === "blob") {
+      return await response.blob() as T
+    }
+
+    return await response.json<T>()
   } catch (error) {
     console.error("API request failed:", error)
     throw error
