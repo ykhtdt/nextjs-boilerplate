@@ -1,5 +1,8 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:tailwindcss/recommended"
+  ],
   "rules": {
     "linebreak-style": [
       "error",
@@ -7,7 +10,10 @@
     ],
     "indent": [
       "error",
-      2
+      2,
+      {
+        "SwitchCase": 1
+      }
     ],
     "no-tabs": [
       "error"
@@ -20,7 +26,6 @@
       "error",
       "double"
     ],
-    "react/no-children-prop": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-children-prop": "off"
   }
 }
