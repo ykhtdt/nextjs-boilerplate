@@ -1,8 +1,7 @@
 {
   "editor.tabSize": 2,
-  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
+    "source.fixAll": "always"
   },
   "css.customData": [
     ".vscode/css_custom.json"
